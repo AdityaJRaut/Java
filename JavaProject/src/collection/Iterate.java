@@ -1,0 +1,20 @@
+package collection;
+import java.util.*;
+public class Iterate {
+
+	public static void main(String[] args) {
+		List<String> colors = new ArrayList<String>();
+		colors.add("violet");
+		colors.add("indigo");
+		colors.add("blue");
+		colors.add("green");
+		colors.add("yellow");
+		colors.add("orange");
+		colors.add("red");
+		for (String color : colors) {
+			System.out.println(color);
+		}
+
+	}
+
+}
