@@ -1,10 +1,10 @@
 package SchoolDemo;
 
 public class MainApp {
-
 	public static void main(String[] args) {
 		Student student1 = new Student("Aditya", 30, null, null);
 		Student student2 = new Student("Bhushan", 25, null, null);
+
 		student1.getDetails();
 		student2.getDetails();
 		student1.displayInfo();
@@ -23,7 +23,5 @@ public class MainApp {
 		teacher.displayInfo();
 		student1.displayInfo();
 		student2.displayInfo();
-
 	}
-
 }

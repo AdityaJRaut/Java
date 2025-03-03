@@ -4,7 +4,7 @@ public class Reverse
 {
     public static void main(String[] args)
     {
-        int lastlastDigit,newValue=0;
+        int newValue=0;
         int arr[]=new int[5];
         int brr[]=new int[5];
         Scanner sc=new Scanner(System.in);
@@ -28,5 +28,6 @@ public class Reverse
         {
             System.out.println(brr[i]);
         }
+        sc.close();
     }
 }
