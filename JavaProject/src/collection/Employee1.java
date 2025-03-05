@@ -2,19 +2,19 @@ package collection;
 
 import java.util.Scanner;
 
-public class Employee {
+public class Employee1 extends Person {
 	int empno;
-	String empname;
+
 	double empsalary;
 	String deptname;
 	static Scanner sc = new Scanner(System.in);
 
-	public Employee() {
+	public Employee1() {
 	}
 
-	public Employee(int empno, String empname, double empsalary, String deptname) {
+	public Employee1(int empno, String empname, double empsalary, String deptname) {
 		this.empno = empno;
-		this.empname = empname;
+		this.name = empname;
 		this.empsalary = empsalary;
 		this.deptname = deptname;
 	}
@@ -23,7 +23,7 @@ public class Employee {
 		System.out.println("Enter Employee no.");
 		this.empno = sc.nextInt();
 		System.out.println("Enter name of Employee");
-		this.empname = sc.next();
+		this.name = sc.next();
 		System.out.println("Enter Employee salary");
 		this.empsalary = sc.nextDouble();
 		System.out.println("Enter Employee Department");
@@ -42,7 +42,7 @@ public class Employee {
 	}
 
 	public String getEmpname() {
-		return empname;
+		return name;
 	}
 
 	public double getEmpsalary() {
@@ -62,7 +62,7 @@ public class Employee {
 	}
 
 	public void setEmpname(String empname) {
-		this.empname = empname;
+		this.name = empname;
 	}
 
 	public void setEmpsalary(double empsalary) {
@@ -75,7 +75,7 @@ public class Employee {
 
 	@Override
 	public String toString() {
-		return "Employee [empno=" + empno + ", empname=" + empname + ", empsalary=" + empsalary + ", deptname="
+		return "Employee [empno=" + empno + ", empname=" + name + ", empsalary=" + empsalary + ", deptname="
 				+ deptname + "]";
 	}
 

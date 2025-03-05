@@ -1,5 +1,6 @@
 package collection;
-import java.util.*;
+import java.util.ArrayList;
+import java.util.List;
 public class Iterate {
 
 	public static void main(String[] args) {

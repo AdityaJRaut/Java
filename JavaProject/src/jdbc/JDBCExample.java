@@ -1,6 +1,8 @@
 package jdbc;
+
 import java.sql.Connection;
 import java.sql.DriverManager;
+import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.sql.Statement;
 
@@ -10,18 +12,22 @@ public class JDBCExample {
 		String url = "jdbc:mysql://localhost:3306/demo";
 		String username = "root";
 		String password = "Aditya@2801#R";
-		String query = "update students1 set name='aditya',marks=90 where id=1;";
+		// String query = "insert into students1 values(3,'Bhavesh',93);";
+		String query = "select * from students1;";
 		try {
-			Class.forName("com.mysql.cj.jdbc.Driver");
 			Connection c = DriverManager.getConnection(url, username, password);
 			Statement st = c.createStatement();
-			st.executeUpdate(query);
-			//System.out.println("Number of rows affected by this query: " + count);
+			// st.execute(query);
+			ResultSet rs = st.executeQuery(query);
+			while (rs.next()) {
+				int id = rs.getInt(1);
+				String name = rs.getString(2);
+				int marks = rs.getInt(3);
+				System.out.println(id + " " + name + " " + marks);
+			}
 			st.close();
 			c.close();
 			System.out.println("Connection closed.");
-		} catch (ClassNotFoundException e) {
-			System.err.println("JDBC Driver not found: " + e.getMessage());
 		} catch (SQLException e) {
 			System.err.println("SQL Error: " + e.getMessage());
 		}

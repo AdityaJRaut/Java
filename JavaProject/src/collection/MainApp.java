@@ -14,7 +14,7 @@ public class MainApp {
 		int no = sc.nextInt();
 		for (int i = 0; i < no; i++) {
 			System.out.println("Enter employee " + (i + 1) + " details:");
-			employeeObj = new Employee();
+			employeeObj = new Employee1();
 			employeeObj.getDetails();
 			employee.add(employeeObj);
 		}

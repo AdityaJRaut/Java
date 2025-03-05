@@ -3,6 +3,20 @@ package exceptionhandling;
 public class Finallythrows {
 
 	public static void main(String[] args) throws Exception {
+		try
+		{
+		adityaTest();
+		}
+		catch(NullPointerException e1)
+		{
+			System.out.println("Ex handled");
+		}
+		
+		System.out.println("continue");
+	}
+
+	private static void adityaTest() throws NullPointerException
+	{
 		int num=10;
 		int den=0;
 		try {
@@ -10,10 +24,11 @@ public class Finallythrows {
 			System.out.println(res);
 			
 		} 
-		finally {
-			throw new NullPointerException();
+		catch (Exception e) {
+			System.out.println(e);
 		}
-
+		
+		
 	}
 
 }
