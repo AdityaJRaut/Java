@@ -20,10 +20,10 @@ public class DispenseCash {
 		pq.add(500);
 		pq.add(200);
 		pq.add(100);
-		if (amount % 100 != 0) {
-			System.out.println("Please enter amount multiples of 100");
-			return;
-		}
+		pq.add(50);
+		pq.add(20);
+		pq.add(10);
+		pq.add(5);
 		while (!pq.isEmpty() && amount > 0) {
 
 			int note = pq.remove();
@@ -32,9 +32,6 @@ public class DispenseCash {
 			if (count > 0) {
 				System.out.println("Rs." + note + " x " + count);
 			}
-		}
-		if (amount > 0) {
-			System.out.println("Unable to dispense entered amount");
 		}
 
 	}
