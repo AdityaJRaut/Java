@@ -19,10 +19,8 @@ public class TwoDArrayList {
 		rj.add("Jaipur");
 		rj.add("Udaipur");
 		rj.add("Fatehpur");
-		System.out.println(india);
-		for (List<String> state : india) {
-			System.out.println(state.get(0));
-		}
+		//System.out.println(india);
+		india.forEach(state-> System.out.println(state));
 	}
 
 }

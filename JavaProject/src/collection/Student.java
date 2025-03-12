@@ -1,12 +1,10 @@
 package collection;
 
-public class Student {
+public  class Student implements Comparable<Student> {
     int rno;
     String name;
     float marks;
 
-    public Student() {
-    }
 
     public Student(int rno, String name, float marks) {
         this.rno = rno;
@@ -42,4 +40,14 @@ public class Student {
     public String toString() {
         return "Student{rno: "+rno+", name: "+name+" marks: "+marks+"}";
     }
+    
+    @Override
+	public int compareTo(Student that) {
+		if(this.rno>that.rno)
+		return 1;
+		else
+			return -1;
+	}
+
+	
 }
