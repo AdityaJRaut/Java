@@ -1,18 +1,28 @@
 package threads;
 
-public class ThreadDemo extends Thread {
+public class ThreadDemo implements Runnable {
 
 	@Override
 	public void run() {
-		System.out.println(Thread.currentThread().getName() + " is running");
+		for (char i = 'a'; i <= 'z'; i++) {
+			System.out.println(i);
+			try {
+				Thread.sleep(1000);
+			} catch (InterruptedException e) {
+				// TODO Auto-generated catch block
+				e.printStackTrace();
+			}
+		}
 	}
 
 	public static void main(String[] args) {
-
-		for (int i = 0; i < 5; i++) {
-
-			ThreadDemo td = new ThreadDemo();
-			td.start();
-		}
+		
+		ThreadA A=new ThreadA();
+		ThreadB B=new ThreadB();
+		ThreadDemo TD=new ThreadDemo();
+		TD.run();
+		A.run();
+		B.run();
+		
 	}
 }

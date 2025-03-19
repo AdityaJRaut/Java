@@ -1,11 +1,13 @@
 package jdbc;
 
+import java.sql.Connection;
 import java.util.Scanner;
 
 public class MainApp {
 	public static void main(String[] args) {
-		CRUD crud = new CRUD();
-		Scanner scanner = new Scanner(System.in);
+		Scanner sc = new Scanner(System.in);
+		Connection conn = JDBCConnection.dbConnection(); // Get DB connection
+		CRUD crud = new CRUD(conn); // Pass connection to CRUD
 
 		while (true) {
 			System.out.println("\nChoose an operation:");
@@ -17,7 +19,9 @@ public class MainApp {
 			System.out.println("6. Exit");
 			System.out.print("Enter choice: ");
 
-			int choice = scanner.nextInt();
+			int choice = sc.nextInt();
+			sc.nextLine(); // Consume newline after nextInt()
+
 			switch (choice) {
 			case 1:
 				crud.insertData();
@@ -35,11 +39,10 @@ public class MainApp {
 				crud.showData();
 				break;
 			case 6:
-				crud.closeResources();
-				scanner.close();
-				System.out.println("Exiting...");
-				System.exit(0);
-				break;
+				System.out.println("Closing resources and exiting...");
+				JDBCConnection.closeConnection(); // Close DB connection
+				sc.close(); // Close scanner
+				return; // Exit the loop (better than System.exit(0))
 			default:
 				System.out.println("Invalid choice! Try again.");
 			}

@@ -11,7 +11,7 @@ public class ObjectCollectionDemo {
 		Comparator<Student> com = new Comparator<Student>() {
 
 			public int compare(Student o1, Student o2) {
-				int res = o1.marks > o2.marks ? 1 : 1;
+				int res = o1.marks > o2.marks ? 1 : -1;
 				return res;
 			}
 		};

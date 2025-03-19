@@ -2,35 +2,30 @@ package jdbc;
 
 import java.sql.Connection;
 import java.sql.DriverManager;
-import java.sql.PreparedStatement;
 import java.sql.ResultSet;
+import java.sql.Statement;
 
 public class JDBCSelect {
-
+	
 	public static void main(String[] args) {
-		String url = "jdbc:mysql://localhost:3306/demo";
-		String username = "root";
-		String password = "Aditya@2801#R";
+		String url="jdbc:mysql://localhost:3306/demo";
+		String username="root";
+		String password="Aditya@2801#R";
 		try {
 			Class.forName("com.mysql.cj.jdbc.Driver");
-			Connection conn = DriverManager.getConnection(url, username, password);
-			String query = "select * from javademo";
-			PreparedStatement ps = conn.prepareStatement(query);
-			ResultSet rs = ps.executeQuery();
-			while (rs.next()) {
-				int id = rs.getInt(1);
-				String name = rs.getString(2);
-				double salary = rs.getDouble(3);
-				System.out.println("id " + id + " name " + name + " salary " + salary);
+			Connection con=DriverManager.getConnection(url, username, password);
+			String query="select * from javademo";
+			Statement st=con.createStatement();
+			ResultSet rs=st.executeQuery(query);
+			System.out.printf("%-5s%-15s%-10s","ID","NAME","SALARY");
+			while(rs.next())
+			{
+				System.out.println();
+				System.out.printf("%-5s%-15s%-10s",rs.getInt(1),rs.getString(2),rs.getDouble(3));
+				
 			}
-			rs.close();
-			ps.close();
-			conn.close();
-
 		} catch (Exception e) {
-			e.printStackTrace();
+			// TODO: handle exception
 		}
-
 	}
-
 }

@@ -1,82 +1,35 @@
 package jdbc;
 
 import java.sql.Connection;
-import java.sql.DriverManager;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.util.Scanner;
 
 public class CRUD {
+	public CRUD(Connection conn) {
+		this.conn = conn;
+	}
+
 	private int id;
 	private String name;
 	private double salary;
 	private Scanner sc = new Scanner(System.in);
 	private Connection conn;
-	private PreparedStatement ps;
-
-	// Database credentials
-	private static final String URL = "jdbc:mysql://localhost:3306/demo";
-	private static final String USERNAME = "root";
-	private static final String PASSWORD = "Aditya@2801#R";
-
-	public CRUD() {
-		DatabaseConnection(); // Establish connection when object is created
-	}
-
-	public void DatabaseConnection() {
-		try {
-			Class.forName("com.mysql.cj.jdbc.Driver");
-			conn = DriverManager.getConnection(URL, USERNAME, PASSWORD);
-			System.out.println("Database Connected Successfully!");
-		} catch (Exception e) {
-			e.printStackTrace();
-		}
-	}
-
-	public void closeResources() {
-		try {
-			if (ps != null)
-				ps.close();
-			if (conn != null)
-				conn.close();
-			if (sc != null)
-				sc.close();
-		} catch (SQLException e) {
-			e.printStackTrace();
-		}
-	}
 
 	public void insertData() {
-		try {
-			System.out.println("Enter ID:");
-			this.id = sc.nextInt();
+		String query = "INSERT INTO javademo(name, salary) VALUES (?, ?)";
+		try (PreparedStatement ps = conn.prepareStatement(query)) {
 			System.out.println("Enter Name:");
-			this.name = sc.next();
+			this.name = sc.nextLine();
 			System.out.println("Enter Salary:");
 			this.salary = sc.nextDouble();
+			sc.nextLine(); // Consume leftover newline
 
-			String query = "SELECT id FROM javademo";
-			ps = conn.prepareStatement(query);
-			ResultSet rs = ps.executeQuery();
-			while (rs.next()) {
-				int id = rs.getInt(1);
-				if (this.id == id) {
-					System.out.println("Data already exists for id " + id);
-					break;
-				} else {
-					query = "INSERT INTO javademo(id, name, salary) VALUES (?, ?, ?)";
-					ps = conn.prepareStatement(query);
-					ps.setInt(1, id);
-					ps.setString(2, name);
-					ps.setDouble(3, salary);
-					ps.executeUpdate();
-
-					System.out.println("Data Inserted Successfully...");
-				}
-
-				rs.close();
-			}
+			ps.setString(1, this.name);
+			ps.setDouble(2, this.salary);
+			ps.executeUpdate();
+			System.out.println("Data inserted successfully!");
 
 		} catch (SQLException e) {
 			e.printStackTrace();
@@ -87,19 +40,28 @@ public class CRUD {
 		try {
 			System.out.println("Enter ID to update name:");
 			this.id = sc.nextInt();
-			System.out.println("Enter new Name:");
-			this.name = sc.next();
+			sc.nextLine(); // Consume newline
 
-			String query = "UPDATE javademo SET name = ? WHERE id = ?";
-			ps = conn.prepareStatement(query);
-			ps.setString(1, name);
-			ps.setInt(2, id);
-			int rowsUpdated = ps.executeUpdate();
+			String selectQuery = "SELECT id FROM javademo WHERE id = ?";
+			try (PreparedStatement ps = conn.prepareStatement(selectQuery)) {
+				ps.setInt(1, id);
+				ResultSet rs = ps.executeQuery();
 
-			if (rowsUpdated > 0) {
-				System.out.println("Name Updated Successfully...");
-			} else {
-				System.out.println("ID not found!");
+				if (rs.next()) {
+					System.out.println("Enter new name:");
+					this.name = sc.nextLine();
+
+					String updateQuery = "UPDATE javademo SET name = ? WHERE id = ?";
+					try (PreparedStatement updatePs = conn.prepareStatement(updateQuery)) {
+						updatePs.setString(1, name);
+						updatePs.setInt(2, id);
+						updatePs.executeUpdate();
+						System.out.println("Name updated successfully!");
+					}
+				} else {
+					System.out.println("ID not found!");
+				}
+				rs.close();
 			}
 		} catch (SQLException e) {
 			e.printStackTrace();
@@ -110,19 +72,27 @@ public class CRUD {
 		try {
 			System.out.println("Enter ID to update salary:");
 			this.id = sc.nextInt();
-			System.out.println("Enter new Salary:");
-			this.salary = sc.nextDouble();
 
-			String query = "UPDATE javademo SET salary = ? WHERE id = ?";
-			ps = conn.prepareStatement(query);
-			ps.setDouble(1, salary);
-			ps.setInt(2, id);
-			int rowsUpdated = ps.executeUpdate();
+			String selectQuery = "SELECT id FROM javademo WHERE id = ?";
+			try (PreparedStatement ps = conn.prepareStatement(selectQuery)) {
+				ps.setInt(1, id);
+				ResultSet rs = ps.executeQuery();
 
-			if (rowsUpdated > 0) {
-				System.out.println("Salary Updated Successfully...");
-			} else {
-				System.out.println("ID not found!");
+				if (rs.next()) {
+					System.out.println("Enter new Salary:");
+					this.salary = sc.nextDouble();
+
+					String updateQuery = "UPDATE javademo SET salary = ? WHERE id = ?";
+					try (PreparedStatement updatePs = conn.prepareStatement(updateQuery)) {
+						updatePs.setDouble(1, salary);
+						updatePs.setInt(2, id);
+						updatePs.executeUpdate();
+						System.out.println("Salary updated successfully!");
+					}
+				} else {
+					System.out.println("ID not found!");
+				}
+				rs.close();
 			}
 		} catch (SQLException e) {
 			e.printStackTrace();
@@ -134,15 +104,26 @@ public class CRUD {
 			System.out.println("Enter ID to delete:");
 			this.id = sc.nextInt();
 
-			String query = "DELETE FROM javademo WHERE id = ?";
-			ps = conn.prepareStatement(query);
-			ps.setInt(1, id);
-			int rowsDeleted = ps.executeUpdate();
+			String selectQuery = "SELECT id FROM javademo WHERE id = ?";
+			try (PreparedStatement ps = conn.prepareStatement(selectQuery)) {
+				ps.setInt(1, id);
+				ResultSet rs = ps.executeQuery();
 
-			if (rowsDeleted > 0) {
-				System.out.println("Data Deleted Successfully...");
-			} else {
-				System.out.println("ID not found!");
+				if (rs.next()) {
+					String deleteQuery = "DELETE FROM javademo WHERE id = ?";
+					try (PreparedStatement deletePs = conn.prepareStatement(deleteQuery)) {
+						deletePs.setInt(1, id);
+						int rowsDeleted = deletePs.executeUpdate();
+						if (rowsDeleted > 0) {
+							System.out.println("Data Deleted Successfully...");
+						} else {
+							System.out.println("ID not found!");
+						}
+					}
+				} else {
+					System.out.println("ID not found!");
+				}
+				rs.close();
 			}
 		} catch (SQLException e) {
 			e.printStackTrace();
@@ -150,21 +131,16 @@ public class CRUD {
 	}
 
 	public void showData() {
-		try {
-			String query = "SELECT * FROM javademo";
-			ps = conn.prepareStatement(query);
-			ResultSet rs = ps.executeQuery();
+		String query = "SELECT * FROM javademo";
+		try (PreparedStatement ps = conn.prepareStatement(query); ResultSet rs = ps.executeQuery()) {
 
-			System.out.println("ID\tName\tSalary");
-			System.out.println("----------------------------");
-
+			System.out.printf("%-5s %-20s %-10s%n", "ID", "Name", "Salary");
+			System.out.println("--------------------------------------");
 			while (rs.next()) {
-				int id = rs.getInt(1);
-				String name = rs.getString(2);
-				double salary = rs.getDouble(3);
-				System.out.println(id + "\t" + name + "\t" + salary);
+				System.out.printf("%-5d %-20s %-10.2f%n", rs.getInt("id"), rs.getString("name"),
+						rs.getDouble("salary"));
 			}
-			rs.close();
+
 		} catch (SQLException e) {
 			e.printStackTrace();
 		}
