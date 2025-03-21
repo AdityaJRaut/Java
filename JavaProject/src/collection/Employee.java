@@ -3,11 +3,17 @@ package collection;
 import java.util.Scanner;
 
 public class Employee {
+	static Scanner sc = new Scanner(System.in);
+
+	public static Scanner getSc() {
+		return sc;
+	}
+
 	int empno;
 	String empname;
 	double empsalary;
+
 	String deptname;
-	static Scanner sc = new Scanner(System.in);
 
 	public Employee() {
 	}
@@ -17,6 +23,17 @@ public class Employee {
 		this.empname = empname;
 		this.empsalary = empsalary;
 		this.deptname = deptname;
+	}
+
+	void displayDetails() {
+		System.out.println("Employee No " + this.getEmpno());
+		System.out.println("Employee Name " + this.getEmpname());
+		System.out.println("Employee Salary " + this.getEmpsalary());
+		System.out.println("Employee Department " + this.getDeptname());
+	}
+
+	public String getDeptname() {
+		return deptname;
 	}
 
 	void getDetails() {
@@ -30,47 +47,32 @@ public class Employee {
 		this.deptname = sc.next();
 	}
 
-	void displayDetails() {
-		System.out.println("Employee No " + this.getEmpno());
-		System.out.println("Employee Name " + this.getEmpname());
-		System.out.println("Employee Salary " + this.getEmpsalary());
-		System.out.println("Employee Department " + this.getDeptname());
+	public String getEmpname() {
+		return empname;
 	}
 
 	public int getEmpno() {
 		return empno;
 	}
 
-	public String getEmpname() {
-		return empname;
-	}
-
 	public double getEmpsalary() {
 		return empsalary;
 	}
 
-	public String getDeptname() {
-		return deptname;
-	}
-
-	public static Scanner getSc() {
-		return sc;
-	}
-
-	public void setEmpno(int empno) {
-		this.empno = empno;
+	public void setDeptname(String deptname) {
+		this.deptname = deptname;
 	}
 
 	public void setEmpname(String empname) {
 		this.empname = empname;
 	}
 
-	public void setEmpsalary(double empsalary) {
-		this.empsalary = empsalary;
+	public void setEmpno(int empno) {
+		this.empno = empno;
 	}
 
-	public void setDeptname(String deptname) {
-		this.deptname = deptname;
+	public void setEmpsalary(double empsalary) {
+		this.empsalary = empsalary;
 	}
 
 	@Override

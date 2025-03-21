@@ -41,7 +41,7 @@ public class RemoveDuplicatesUsingStack {
 		al.add(10);
 		al.add(50);
 		Collections.sort(al);
-		System.out.println("List before removing duplicates "+al);
+		System.out.println("List before removing duplicates " + al);
 		Stack<Integer> stk = new Stack<>();
 		for (int num : al) {
 			if (!stk.contains(num)) {

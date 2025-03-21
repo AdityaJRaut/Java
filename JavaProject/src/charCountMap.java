@@ -1,5 +1,6 @@
 import java.util.HashMap;
 import java.util.Map;
+
 public class charCountMap {
 	public static void main(String[] args) {
 		String input = "Java Program Execution";

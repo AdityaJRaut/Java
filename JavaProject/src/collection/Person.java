@@ -11,6 +11,10 @@ public abstract class Person {
 		this.name = name;
 	}
 
+	abstract void displayDetails();
+
+	abstract void getDetails();
+
 	public String getName() {
 		return name;
 	}
@@ -18,9 +22,5 @@ public abstract class Person {
 	public void setName(String name) {
 		this.name = name;
 	}
-
-	abstract void getDetails();
-
-	abstract void displayDetails();
 
 }

@@ -14,9 +14,9 @@ public class CopyArrayList {
 		colors.add("yellow");
 		colors.add("orange");
 		colors.add("red");
-		List<String> newColors=new ArrayList<String>(List.copyOf(colors));
-		//System.out.println(newColors.size());
-		//Collections.copy(newColors, colors);
+		List<String> newColors = new ArrayList<String>(List.copyOf(colors));
+		// System.out.println(newColors.size());
+		// Collections.copy(newColors, colors);
 		System.out.println(newColors);
 
 	}

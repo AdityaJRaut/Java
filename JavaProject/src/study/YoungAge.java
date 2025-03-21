@@ -4,20 +4,6 @@ import java.util.Scanner;
 
 public class YoungAge {
 
-	public static void main(String[] args) {
-		Scanner sc = new Scanner(System.in);
-		System.out.print("Enter age for ram: ");
-		int ram = sc.nextInt();
-		System.out.print("Enter age for shyam: ");
-		int shyam = sc.nextInt();
-		System.out.print("Enter age for ajay: ");
-		int ajay = sc.nextInt();
-		int youngAge = checkYoungAge(ram, shyam, ajay);
-		System.out.println("Age with "+youngAge+" is young");
-		sc.close();
-
-	}
-
 	private static int checkYoungAge(int ram, int shyam, int ajay) {
 		if (ram < shyam) {
 			if (ram < ajay) {
@@ -28,6 +14,20 @@ public class YoungAge {
 		}
 
 		return ajay;
+
+	}
+
+	public static void main(String[] args) {
+		Scanner sc = new Scanner(System.in);
+		System.out.print("Enter age for ram: ");
+		int ram = sc.nextInt();
+		System.out.print("Enter age for shyam: ");
+		int shyam = sc.nextInt();
+		System.out.print("Enter age for ajay: ");
+		int ajay = sc.nextInt();
+		int youngAge = checkYoungAge(ram, shyam, ajay);
+		System.out.println("Age with " + youngAge + " is young");
+		sc.close();
 
 	}
 

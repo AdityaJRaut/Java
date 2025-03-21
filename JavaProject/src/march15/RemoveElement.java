@@ -6,7 +6,7 @@ import java.util.Set;
 public class RemoveElement {
 
 	public static void main(String[] args) {
-		Set<Integer> numbersSet=new HashSet<Integer>();
+		Set<Integer> numbersSet = new HashSet<Integer>();
 		numbersSet.add(10);
 		numbersSet.add(20);
 		numbersSet.add(30);

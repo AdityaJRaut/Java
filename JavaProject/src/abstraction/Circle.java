@@ -1,10 +1,8 @@
 package abstraction;
 
-public class Circle implements Shape2D
-{
+public class Circle implements Shape2D {
 	@Override
-	public void area()
-	{
+	public void area() {
 		System.out.println("Circle Class 3.14*r*r");
 	}
 
@@ -12,7 +10,7 @@ public class Circle implements Shape2D
 	public void perimeter() {
 
 		System.out.println("Circle Class 3.14*r");
-		
+
 	}
-	
+
 }

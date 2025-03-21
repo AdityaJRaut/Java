@@ -1,25 +1,21 @@
 package polymorphism;
 
-public class Abhishek extends Amitabh
-{
+public class Abhishek extends Amitabh {
 	@Override
-	void car()
-	{
+	void car() {
 		System.out.println("Abhishek Audi");
 	}
-	
-	void car(int n)
-	{
+
+	void car(int n) {
 		System.out.println("Abhishek Bentley");
 	}
-	
+
 	@Override
-	void home()
-	{
+	void home() {
 		System.out.println("Abhishek New Jalsa");
 	}
-	void office()
-	{
+
+	void office() {
 		System.out.println("Abhishek Bandra Office");
 	}
 }

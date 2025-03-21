@@ -6,23 +6,21 @@ public class electricityBill {
 		readingInput();
 	}
 
-	private static void rateSlab() {
-		System.out.println(String.format("%-30s", "Below 100 Units") + "Rs." + String.format("%5.2f", 2.5));
-		System.out.println(String.format("%-30s", "100-200 Units") + "Rs." + String.format("%5.2f", 3.5));
-		System.out.println(String.format("%-30s", "200-300 Units") + "Rs." + String.format("%5.2f", 4.5));
-		System.out.println(String.format("%-30s", "Above 300 Units") + "Rs." + String.format("%5.2f", 5.5));
-		System.out.println(String.format("%-30s", "--------------------------") + String.format("%5s", "--------"));
-	}
+	private static void printBill(int previousMeterReading, int currentReading, int unitsConsumed, double billAmount) {
 
-	private static void readingInput() {
-		Scanner sc = new Scanner(System.in);
-		System.out.println("Electricity Bill Portal");
-		System.out.println("Enter previous reading");
-		int previousMeterReading = sc.nextInt();
-		System.out.println("Enter current Reading");
-		int currentReading = sc.nextInt();
-		sc.close();
-		processingInput(previousMeterReading, currentReading);
+		System.out.println(String.format("%s", "MSEDCL ELECTRICITY BILL"));
+		rateSlab();
+		unitsConsumed = currentReading - previousMeterReading;
+		System.out.println(String.format("%-30s", "Fixed Meter Charges") + "Rs." + String.format("%5d", 100));
+		System.out.println(
+				String.format("%-30s", "Previous Reading") + "Rs." + String.format("%5d", previousMeterReading));
+		System.out.println(
+				String.format("%-30s", "Current Meter Reading") + "Rs." + String.format("%5d", currentReading));
+		System.out.println(String.format("%-30s", "Units Consumed") + "Rs." + String.format("%5d", unitsConsumed));
+		System.out.println(String.format("%-30s", "Total Payable") + "Rs." + String.format("%5.2f", billAmount));
+		System.out.println(String.format("%-30s", "Due Date") + String.format("%5s", "31-01-2025"));
+		System.out.println(String.format("%-30s", "Total Payable after due date") + "Rs."
+				+ String.format("%5.2f", billAmount + 2.5));
 	}
 
 	private static void processingInput(int previousMeterReading, int currentReading) {
@@ -50,21 +48,23 @@ public class electricityBill {
 
 	}
 
-	private static void printBill(int previousMeterReading, int currentReading, int unitsConsumed, double billAmount) {
+	private static void rateSlab() {
+		System.out.println(String.format("%-30s", "Below 100 Units") + "Rs." + String.format("%5.2f", 2.5));
+		System.out.println(String.format("%-30s", "100-200 Units") + "Rs." + String.format("%5.2f", 3.5));
+		System.out.println(String.format("%-30s", "200-300 Units") + "Rs." + String.format("%5.2f", 4.5));
+		System.out.println(String.format("%-30s", "Above 300 Units") + "Rs." + String.format("%5.2f", 5.5));
+		System.out.println(String.format("%-30s", "--------------------------") + String.format("%5s", "--------"));
+	}
 
-		System.out.println(String.format("%s", "MSEDCL ELECTRICITY BILL"));
-		rateSlab();
-		unitsConsumed = currentReading - previousMeterReading;
-		System.out.println(String.format("%-30s", "Fixed Meter Charges") + "Rs." + String.format("%5d", 100));
-		System.out.println(
-				String.format("%-30s", "Previous Reading") + "Rs." + String.format("%5d", previousMeterReading));
-		System.out.println(
-				String.format("%-30s", "Current Meter Reading") + "Rs." + String.format("%5d", currentReading));
-		System.out.println(String.format("%-30s", "Units Consumed") + "Rs." + String.format("%5d", unitsConsumed));
-		System.out.println(String.format("%-30s", "Total Payable") + "Rs." + String.format("%5.2f", billAmount));
-		System.out.println(String.format("%-30s", "Due Date") + String.format("%5s", "31-01-2025"));
-		System.out.println(String.format("%-30s", "Total Payable after due date") + "Rs."
-				+ String.format("%5.2f", billAmount + 2.5));
+	private static void readingInput() {
+		Scanner sc = new Scanner(System.in);
+		System.out.println("Electricity Bill Portal");
+		System.out.println("Enter previous reading");
+		int previousMeterReading = sc.nextInt();
+		System.out.println("Enter current Reading");
+		int currentReading = sc.nextInt();
+		sc.close();
+		processingInput(previousMeterReading, currentReading);
 	}
 
 }

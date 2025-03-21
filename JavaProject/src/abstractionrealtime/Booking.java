@@ -10,38 +10,6 @@ public class Booking {
 	private int hours;
 	Scanner sc = new Scanner(System.in);
 
-	public String getCustomerName() {
-		return customerName;
-	}
-
-	public void setCustomerName(String customerName) {
-		this.customerName = customerName;
-	}
-
-	public String getEventDate() {
-		return eventDate;
-	}
-
-	public void setEventDate(String eventDate) {
-		this.eventDate = eventDate;
-	}
-
-	public String getEventTime() {
-		return eventTime;
-	}
-
-	public void setEventTime(String eventTime) {
-		this.eventTime = eventTime;
-	}
-
-	public int getHours() {
-		return hours;
-	}
-
-	public void setHours(int hours) {
-		this.hours = hours;
-	}
-
 	public void AcceptBooking() {
 
 		System.out.println("Enter Customer Name");
@@ -63,6 +31,38 @@ public class Booking {
 		System.out.println("Turf Type: " + turf.getTurfType());
 		System.out.println("Turf hourly rate: " + turf.getHourlyRate());
 		System.out.println("Total payable: " + turf.getHourlyRate() * this.hours);
+	}
+
+	public String getCustomerName() {
+		return customerName;
+	}
+
+	public String getEventDate() {
+		return eventDate;
+	}
+
+	public String getEventTime() {
+		return eventTime;
+	}
+
+	public int getHours() {
+		return hours;
+	}
+
+	public void setCustomerName(String customerName) {
+		this.customerName = customerName;
+	}
+
+	public void setEventDate(String eventDate) {
+		this.eventDate = eventDate;
+	}
+
+	public void setEventTime(String eventTime) {
+		this.eventTime = eventTime;
+	}
+
+	public void setHours(int hours) {
+		this.hours = hours;
 	}
 
 }

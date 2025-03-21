@@ -3,50 +3,46 @@ package serialization;
 import java.io.Serializable;
 
 public class Student implements Serializable {
-    /**
+	/**
 	 * 
 	 */
 	private static final long serialVersionUID = 1L;
 	String name;
-    int age;
-    int rno;
+	int age;
+	int rno;
 
-    public Student(String name, int age, int rno) {
-        this.name = name;
-        this.age = age;
-        this.rno = rno;
-    }
+	public Student(String name, int age, int rno) {
+		this.name = name;
+		this.age = age;
+		this.rno = rno;
+	}
 
-    public String getName() {
-        return name;
-    }
+	public int getAge() {
+		return age;
+	}
 
-    public void setName(String name) {
-        this.name = name;
-    }
+	public String getName() {
+		return name;
+	}
 
-    public int getAge() {
-        return age;
-    }
+	public int getRno() {
+		return rno;
+	}
 
-    public void setAge(int age) {
-        this.age = age;
-    }
+	public void setAge(int age) {
+		this.age = age;
+	}
 
-    public int getRno() {
-        return rno;
-    }
+	public void setName(String name) {
+		this.name = name;
+	}
 
-    public void setRno(int rno) {
-        this.rno = rno;
-    }
+	public void setRno(int rno) {
+		this.rno = rno;
+	}
 
-    @Override
-    public String toString() {
-        return "Student{" +
-                "name='" + name + '\'' +
-                ", age=" + age +
-                ", rollno=" + rno +
-                '}';
-    }
+	@Override
+	public String toString() {
+		return "Student{" + "name='" + name + '\'' + ", age=" + age + ", rollno=" + rno + '}';
+	}
 }

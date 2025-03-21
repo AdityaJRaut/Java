@@ -16,14 +16,14 @@ public class TreeSetDemo {
 			@Override
 			public int compare(Student o1, Student o2) {
 				return (o1.getName().compareTo(o2.getName()));
-				
+
 			}
 		});
 		students.add(s1);
 		students.add(s2);
 		students.add(s3);
 		students.add(s4);
-		
+
 		System.out.println(students);
 	}
 

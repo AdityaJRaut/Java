@@ -3,16 +3,15 @@ package abstractionrealtime;
 public class CricketTurf implements Turf {
 
 	@Override
-	public String getTurfType() {
-		return "Cricket Turf";
-		
+	public int getHourlyRate() {
+		return 700;
+
 	}
 
 	@Override
-	public int getHourlyRate() 
-	{
-		return 700;
-		
+	public String getTurfType() {
+		return "Cricket Turf";
+
 	}
 
 }

@@ -12,7 +12,9 @@ public class LongestWord {
 		for (String word : str) {
 			if (word.length() > maxlength) {
 				maxlength = word.length();
-				sortedStr.add(word);}}
+				sortedStr.add(word);
+			}
+		}
 		System.out.println(sortedStr);
 		System.out.println("longest string " + sortedStr.get(sortedStr.size() - 1));
 		System.out.println("2nd longest string " + sortedStr.get(sortedStr.size() - 2));

@@ -5,10 +5,6 @@ import java.util.Collections;
 import java.util.List;
 
 public class ArrayListExampleInt {
-	public static void main(String[] args) {
-		ArrayListUsage();
-	}
-
 	private static void ArrayListUsage() {
 		List<Integer> numbersList = new ArrayList<Integer>();
 		numbersList.add(1);
@@ -39,5 +35,9 @@ public class ArrayListExampleInt {
 		Collections.reverse(numbersList);
 		System.out.println("Reverse " + numbersList);
 
+	}
+
+	public static void main(String[] args) {
+		ArrayListUsage();
 	}
 }

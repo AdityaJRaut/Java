@@ -7,8 +7,8 @@ import java.util.Scanner;
 public class RemoveElement {
 
 	public static void main(String[] args) {
-		Scanner sc=new Scanner(System.in);
-		List<String> colors=new ArrayList<String>();
+		Scanner sc = new Scanner(System.in);
+		List<String> colors = new ArrayList<String>();
 		colors.add("violet");
 		colors.add("indigo");
 		colors.add("blue");

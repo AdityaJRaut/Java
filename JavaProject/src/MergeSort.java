@@ -9,16 +9,6 @@ public class MergeSort {
 		System.out.println("Array After Sorting " + Arrays.toString(arr));
 	}
 
-	private static void splitArray(int[] arr, int first, int last) {
-		if (first < last) {
-			int mid = (first + last) / 2;
-			splitArray(arr, first, mid);
-			splitArray(arr, mid + 1, last);
-			mergeArray(arr, first, mid, last);
-		}
-
-	}
-
 	private static void mergeArray(int[] arr, int first, int mid, int last) {
 		int brr[] = new int[last + 1];
 		int i = first, j = mid + 1, k = first;
@@ -51,6 +41,16 @@ public class MergeSort {
 		}
 		for (int z = first; z <= last; z++) {
 			arr[z] = brr[z];
+		}
+
+	}
+
+	private static void splitArray(int[] arr, int first, int last) {
+		if (first < last) {
+			int mid = (first + last) / 2;
+			splitArray(arr, first, mid);
+			splitArray(arr, mid + 1, last);
+			mergeArray(arr, first, mid, last);
 		}
 
 	}

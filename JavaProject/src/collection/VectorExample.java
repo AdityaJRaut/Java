@@ -1,8 +1,9 @@
 package collection;
+
 public class VectorExample {
 
 	public static void main(String[] args) {
-		java.util.Vector<Integer> v =new java.util.Vector<Integer>();
+		java.util.Vector<Integer> v = new java.util.Vector<Integer>();
 		v.addElement(1);
 		v.add(2);
 		v.add(0, 3);

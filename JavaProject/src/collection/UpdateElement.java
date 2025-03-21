@@ -7,8 +7,8 @@ import java.util.Scanner;
 public class UpdateElement {
 
 	public static void main(String[] args) {
-		Scanner sc=new Scanner(System.in);
-		List<String> colors=new ArrayList<String>();
+		Scanner sc = new Scanner(System.in);
+		List<String> colors = new ArrayList<String>();
 		colors.add("violet");
 		colors.add("indigo");
 		colors.add("blue");
@@ -19,17 +19,14 @@ public class UpdateElement {
 		colors.add("red");
 		System.out.println(colors);
 		System.out.println("Enter color to update");
-		String color=sc.next();		
-		if(colors.contains(color))
-		{
+		String color = sc.next();
+		if (colors.contains(color)) {
 			System.out.println("Enter new color");
-			String newColor=sc.next();
-			int ind=colors.indexOf(color);
+			String newColor = sc.next();
+			int ind = colors.indexOf(color);
 			colors.set(ind, newColor);
 			System.out.println("Color updated successfully...");
-		}
-		else
-		{
+		} else {
 			System.out.println("No color found");
 		}
 		System.out.println(colors);

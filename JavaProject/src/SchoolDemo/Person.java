@@ -8,19 +8,18 @@ abstract class Person {
 	protected int age;
 	Scanner sc = new Scanner(System.in);
 
-	abstract void getDetails();
-
-	abstract void displayInfo();
+	public Person() {
+		this.name = "Aditya";
+		this.age = 30;
+	}
 
 	public Person(String name, int age) {
 		this.name = name;
 		this.age = age;
 	}
-	
-	public Person()
-	{
-		this.name="Aditya";
-		this.age=30;
-	}
+
+	abstract void displayInfo();
+
+	abstract void getDetails();
 
 }

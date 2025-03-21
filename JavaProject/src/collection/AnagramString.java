@@ -8,20 +8,17 @@ import java.util.Map;
 
 public class AnagramString {
 	public static void main(String[] args) {
-		String[] str = { "cab", "bac","abc", "can", "nac", "apple", "pplea" };
-
-		Map<String, List<String>> hmap = new HashMap<String, List<String>>();
+		String[] str = { "cab", "bac", "abc", "can", "nac", "apple", "pplea" };
+		Map<String, List<String>> anagram = new HashMap<>();
 		for (String word : str) {
-			char[] ch=word.toCharArray();
+			char[] ch = word.toCharArray();
 			Arrays.sort(ch);
-			String sortedWord=new String(ch);
-			hmap.putIfAbsent(sortedWord, new ArrayList<String>());
-			hmap.get(sortedWord).add(word);
+			String sortedWord = new String(ch);
+			anagram.putIfAbsent(sortedWord, new ArrayList<String>());
+			anagram.get(sortedWord).add(word);
 		}
-		for(List<String> list:hmap.values())
-		{
-			System.out.println(list);
+		for (Map.Entry<String, List<String>> entry : anagram.entrySet()) {
+			System.out.println(entry.getValue());
 		}
-
 	}
 }

@@ -15,9 +15,9 @@ public class SortArrayList {
 		colors.add("yellow");
 		colors.add("orange");
 		colors.add("red");
-		System.out.println("Before Sort "+colors);
+		System.out.println("Before Sort " + colors);
 		Collections.sort(colors);
-		System.out.println("After Sort "+colors);
+		System.out.println("After Sort " + colors);
 
 	}
 

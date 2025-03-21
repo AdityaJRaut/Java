@@ -9,54 +9,6 @@ public class Student {
 	private String motherName;
 	private double percentage;
 
-	public int getRno() {
-		return rno;
-	}
-
-	public void setRno(int rno) {
-		this.rno = rno;
-	}
-
-	public double getPercentage() {
-		return percentage;
-	}
-
-	public void setPercentage(double percentage) {
-		this.percentage = percentage;
-	}
-
-	public String getStudentName() {
-		return studentName;
-	}
-
-	public void setStudentName(String studentName) {
-		this.studentName = studentName;
-	}
-
-	public String getMotherName() {
-		return motherName;
-	}
-
-	public void setMotherName(String motherName) {
-		this.motherName = motherName;
-	}
-
-	public void Register() {
-
-		System.out.println("I have Registered");
-	}
-
-	public void Login() {
-
-		System.out.println("I have logged in");
-	}
-
-	public void PayFees() {
-
-		System.out.println("I have paid fees");
-
-	}
-
 	public void acceptStudent() {
 		// int z; // local scope
 
@@ -79,6 +31,46 @@ public class Student {
 		System.out.println("Percentage  is " + this.percentage);
 	}
 
+	public String getMotherName() {
+		return motherName;
+	}
+
+	public double getPercentage() {
+		return percentage;
+	}
+
+	public int getRno() {
+		return rno;
+	}
+
+	public String getStudentName() {
+		return studentName;
+	}
+
+	public void Login() {
+
+		System.out.println("I have logged in");
+	}
+
+	public double maxPercentage(double returnValue) {
+
+		if (returnValue < this.percentage) {
+			returnValue = this.percentage;
+		}
+		return returnValue;
+	}
+
+	public void PayFees() {
+
+		System.out.println("I have paid fees");
+
+	}
+
+	public void Register() {
+
+		System.out.println("I have Registered");
+	}
+
 	public int searchStudent(int rollNo) {
 		if (this.rno == rollNo)
 			return 1;
@@ -96,11 +88,19 @@ public class Student {
 
 	}
 
-	public double maxPercentage(double returnValue) {
+	public void setMotherName(String motherName) {
+		this.motherName = motherName;
+	}
 
-		if (returnValue < this.percentage) {
-			returnValue = this.percentage;
-		}
-		return returnValue;
+	public void setPercentage(double percentage) {
+		this.percentage = percentage;
+	}
+
+	public void setRno(int rno) {
+		this.rno = rno;
+	}
+
+	public void setStudentName(String studentName) {
+		this.studentName = studentName;
 	}
 }

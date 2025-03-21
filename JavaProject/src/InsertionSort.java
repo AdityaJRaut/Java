@@ -2,14 +2,6 @@ import java.util.Arrays;
 
 public class InsertionSort {
 
-	public static void main(String[] args) {
-
-		int arr[] = { 6, 2, 9, 3, 1 };
-		System.out.println("Array before Insertion sort " + Arrays.toString(arr));
-		insertionSort(arr, arr.length);
-		System.out.println("Arrays after insertion sort " + Arrays.toString(arr));
-	}
-
 	private static void insertionSort(int[] arr, int length) {
 		int j, temp, i;
 		for (i = 1; i < length; i++) {
@@ -22,6 +14,14 @@ public class InsertionSort {
 			arr[j + 1] = temp;
 		}
 
+	}
+
+	public static void main(String[] args) {
+
+		int arr[] = { 6, 2, 9, 3, 1 };
+		System.out.println("Array before Insertion sort " + Arrays.toString(arr));
+		insertionSort(arr, arr.length);
+		System.out.println("Arrays after insertion sort " + Arrays.toString(arr));
 	}
 
 }

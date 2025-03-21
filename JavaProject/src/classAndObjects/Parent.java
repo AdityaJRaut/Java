@@ -2,8 +2,7 @@ package classAndObjects;
 
 public class Parent {
 
-	void show()
-	{
+	void show() {
 		System.out.println("Parent");
 	}
 }

@@ -23,7 +23,7 @@ public class Strings {
 			switch (ch) {
 			case 1:
 				System.out.println("enter string 1");
-				first=sc.next();
+				first = sc.next();
 				System.out.println("enter string 2");
 				second = sc.next();
 				System.out.println("The concatenated strings are " + first.concat(second));
@@ -55,9 +55,9 @@ public class Strings {
 				System.out.println("enter regex string");
 				String regex = sc.next();
 				String[] arr = first.split(regex);
-		        for (String s : arr) {
-		            System.out.println(s);
-		        }
+				for (String s : arr) {
+					System.out.println(s);
+				}
 				break;
 			case 6:
 				System.out.println("Enter String");

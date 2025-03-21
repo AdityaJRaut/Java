@@ -16,6 +16,7 @@ public class Student {
 
 	@Override
 	public String toString() {
-		return "Student [roll no=" + rno + ", student name=" + sname + ", percentage =" + per + ", is Pnr Active=" + isPnrActive + "]";
+		return "Student [roll no=" + rno + ", student name=" + sname + ", percentage =" + per + ", is Pnr Active="
+				+ isPnrActive + "]";
 	}
 }

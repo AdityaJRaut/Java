@@ -26,60 +26,24 @@ public class Products {
 		this.rating = rating;
 	}
 
-	public int getId() {
-		return id;
-	}
-
-	public String getTitle() {
-		return title;
-	}
-
-	public double getPrice() {
-		return price;
+	public String getCategory() {
+		return category;
 	}
 
 	public String getDescription() {
 		return description;
 	}
 
-	public String getCategory() {
-		return category;
+	public int getId() {
+		return id;
 	}
 
 	public String getImage() {
 		return image;
 	}
 
-	public Rating getRating() {
-		return rating;
-	}
-
-	public void setId(int id) {
-		this.id = id;
-	}
-
-	public void setTitle(String title) {
-		this.title = title;
-	}
-
-	public void setPrice(double price) {
-		this.price = price;
-	}
-
-	public void setDescription(String description) {
-		this.description = description;
-	}
-
-	public void setCategory(String category) {
-		this.category = category;
-	}
-
-	public void setImage(String image) {
-		this.image = image;
-	}
-
-	public void setRating(Rating rating) {
-		this.rating = rating;
+	public double getPrice() {
+		return price;
 	}
 
 	public void getProductDetails() {
@@ -95,16 +59,52 @@ public class Products {
 		this.category = sc.next();
 		System.out.println("Enter image");
 		this.image = sc.next();
-		this.rating=new Rating();
+		this.rating = new Rating();
 		if (rating != null) {
 			rating.getRating();
 		}
 	}
 
+	public Rating getRating() {
+		return rating;
+	}
+
+	public String getTitle() {
+		return title;
+	}
+
+	public void setCategory(String category) {
+		this.category = category;
+	}
+
+	public void setDescription(String description) {
+		this.description = description;
+	}
+
+	public void setId(int id) {
+		this.id = id;
+	}
+
+	public void setImage(String image) {
+		this.image = image;
+	}
+
+	public void setPrice(double price) {
+		this.price = price;
+	}
+
+	public void setRating(Rating rating) {
+		this.rating = rating;
+	}
+
+	public void setTitle(String title) {
+		this.title = title;
+	}
+
 	@Override
 	public String toString() {
 		return "Products [id=" + id + ", title=" + title + ", price=" + price + ", description=" + description
-				+ ", category=" + category + ", image=" + image +","+ rating + "]";
+				+ ", category=" + category + ", image=" + image + "," + rating + "]";
 	}
 
 }

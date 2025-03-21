@@ -14,13 +14,13 @@ public class TwoDArrayList {
 		india.add(rj);
 		mh.add("Pune");
 		mh.add("Kolhapur");
-		mh.add("Nagpur");				
+		mh.add("Nagpur");
 		mh.add("Nashik");
 		rj.add("Jaipur");
 		rj.add("Udaipur");
 		rj.add("Fatehpur");
-		//System.out.println(india);
-		india.forEach(state-> System.out.println(state));
+		// System.out.println(india);
+		india.forEach(state -> System.out.println(state));
 	}
 
 }

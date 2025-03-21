@@ -6,18 +6,17 @@ import java.util.Scanner;
 public class BinarySearchDemo {
 
 	public static void main(String[] args) {
-		
+
 		Scanner sc = new Scanner(System.in);
 		System.out.println("Enter no. for elements to enter in array");
-		int n=sc.nextInt();
+		int n = sc.nextInt();
 		System.out.println("Enter elements in array");
-		int arr[]=new int[n];
-		for(int i=0;i<n;i++)
-		{
-			arr[i]=sc.nextInt();
+		int arr[] = new int[n];
+		for (int i = 0; i < n; i++) {
+			arr[i] = sc.nextInt();
 		}
 		System.out.println(Arrays.toString(arr));
-		
+
 		System.out.println("Enter search element...");
 		int searchElement = sc.nextInt();
 		int first = 0;

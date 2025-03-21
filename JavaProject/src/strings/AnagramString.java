@@ -21,9 +21,9 @@ public class AnagramString {
 		Arrays.sort(c1);
 		Arrays.sort(c2);
 		if (Arrays.equals(c1, c2)) {
-			System.out.println(s1+" "+s2+": Anagram");
+			System.out.println(s1 + " " + s2 + ": Anagram");
 		} else {
-			System.out.println(s1+" "+s2+": Not anagram");
+			System.out.println(s1 + " " + s2 + ": Not anagram");
 		}
 
 	}

@@ -2,6 +2,20 @@ import java.util.Scanner;
 
 public class displayMinMax {
 
+	private static void inputNumbers(int arr[]) {
+		System.out.println("Enter numbers in the array");
+		Scanner sc = new Scanner(System.in);
+		for (int i = 0; i < 5; i++) {
+			arr[i] = sc.nextInt();
+		}
+		System.out.println("The values entered are : ");
+		for (int i = 0; i < 5; i++) {
+			System.out.print(arr[i] + " ");
+		}
+		System.out.println();
+		sc.close();
+	}
+
 	public static void main(String[] args) {
 
 		int arr[] = new int[5];
@@ -20,20 +34,6 @@ public class displayMinMax {
 			}
 		}
 		System.out.println("The max value in array is " + max + " and Min value is " + min);
-	}
-
-	private static void inputNumbers(int arr[]) {
-		System.out.println("Enter numbers in the array");
-		Scanner sc = new Scanner(System.in);
-		for (int i = 0; i < 5; i++) {
-			arr[i] = sc.nextInt();
-		}
-		System.out.println("The values entered are : ");
-		for (int i = 0; i < 5; i++) {
-			System.out.print(arr[i] + " ");
-		}
-		System.out.println();
-		sc.close();
 	}
 
 }

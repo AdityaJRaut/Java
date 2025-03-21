@@ -3,36 +3,17 @@ package javaday4;
 import java.util.Scanner;
 
 public class Student {
+	private static int strength;
+
+	public static void displayStrength() {
+		System.out.println("Class Strength :" + Student.strength);
+	}
+
 	Scanner sc = new Scanner(System.in);
 	private int rno;
 	private String sname;
+
 	private double per;
-	private static int strength;
-
-	public int getRno() {
-		return rno;
-	}
-
-	public void setRno(int rno) {
-		this.rno = rno;
-	}
-
-	public String getSname() {
-		return sname;
-	}
-
-	public void setSname(String sname) {
-		this.sname = sname;
-	}
-
-	public double getPer() {
-		return per;
-	}
-
-	public void setPer(double per) {
-		this.per = per;
-
-	}
 
 	public void acceptStudent() {
 
@@ -51,8 +32,29 @@ public class Student {
 		System.out.println("Per is" + this.per);
 	}
 
-	public static void displayStrength() {
-		System.out.println("Class Strength :" + Student.strength);
+	public double getPer() {
+		return per;
+	}
+
+	public int getRno() {
+		return rno;
+	}
+
+	public String getSname() {
+		return sname;
+	}
+
+	public void setPer(double per) {
+		this.per = per;
+
+	}
+
+	public void setRno(int rno) {
+		this.rno = rno;
+	}
+
+	public void setSname(String sname) {
+		this.sname = sname;
 	}
 
 }

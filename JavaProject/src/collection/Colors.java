@@ -1,10 +1,12 @@
 package collection;
+
 import java.util.ArrayList;
 import java.util.List;
+
 public class Colors {
 
 	public static void main(String[] args) {
-		List<String> colors=new ArrayList<String>();
+		List<String> colors = new ArrayList<String>();
 		colors.add("violet");
 		colors.add("indigo");
 		colors.add("blue");

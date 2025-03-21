@@ -6,8 +6,8 @@ import java.util.List;
 public class ArrayListExample {
 
 	public static void main(String[] args) {
-		
-		List <Object>l1=new ArrayList<Object>();
+
+		List<Object> l1 = new ArrayList<Object>();
 		l1.add("Aditya");
 		l1.add("Kolhapur");
 		l1.add(28);

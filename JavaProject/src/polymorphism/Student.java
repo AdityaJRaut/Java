@@ -2,12 +2,8 @@ package polymorphism;
 
 public class Student {
 
-	@Override
-	public String toString() {
-		return "Student [roll no=" + rno + ", student name=" + sname + ", percentage=" + per + ", is Pnr Active Status=" + isPnrActive + "]";
-	}
-
 	int rno;
+
 	String sname;
 	double per;
 	boolean isPnrActive;
@@ -20,35 +16,8 @@ public class Student {
 		this.isPnrActive = true;
 	}
 
-	public int getRno() {
-		return rno;
-	}
-
-	public void setRno(int rno) {
+	public Student(int rno, boolean isPnrActive) {
 		this.rno = rno;
-	}
-
-	public String getSname() {
-		return sname;
-	}
-
-	public void setSname(String sname) {
-		this.sname = sname;
-	}
-
-	public double getPer() {
-		return per;
-	}
-
-	public void setPer(double per) {
-		this.per = per;
-	}
-
-	public boolean isPnrActive() {
-		return isPnrActive;
-	}
-
-	public void setPnrActive(boolean isPnrActive) {
 		this.isPnrActive = isPnrActive;
 	}
 
@@ -62,11 +31,6 @@ public class Student {
 
 	public Student(String sname) {
 		this.sname = sname;
-	}
-
-	public Student(int rno, boolean isPnrActive) {
-		this.rno = rno;
-		this.isPnrActive = isPnrActive;
 	}
 
 	public Student(String sname, boolean isPnrActive) {
@@ -87,6 +51,44 @@ public class Student {
 		System.out.println("Student Name: " + this.sname);
 		System.out.println("Percentage: " + this.per);
 		System.out.println("PNR Status: " + this.isPnrActive);
+	}
+
+	public double getPer() {
+		return per;
+	}
+
+	public int getRno() {
+		return rno;
+	}
+
+	public String getSname() {
+		return sname;
+	}
+
+	public boolean isPnrActive() {
+		return isPnrActive;
+	}
+
+	public void setPer(double per) {
+		this.per = per;
+	}
+
+	public void setPnrActive(boolean isPnrActive) {
+		this.isPnrActive = isPnrActive;
+	}
+
+	public void setRno(int rno) {
+		this.rno = rno;
+	}
+
+	public void setSname(String sname) {
+		this.sname = sname;
+	}
+
+	@Override
+	public String toString() {
+		return "Student [roll no=" + rno + ", student name=" + sname + ", percentage=" + per + ", is Pnr Active Status="
+				+ isPnrActive + "]";
 	}
 
 }

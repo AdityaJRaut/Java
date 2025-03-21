@@ -2,12 +2,11 @@ package polymorphism;
 
 public class Amitabh {
 
-	void car()
-	{
+	void car() {
 		System.out.println("Amitabh BMW");
 	}
-	void home()
-	{
+
+	void home() {
 		System.out.println("Amitabh Jalsa");
 	}
 }

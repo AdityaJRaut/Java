@@ -3,44 +3,19 @@ package javaday3;
 import java.util.Scanner;
 
 public class Student {
+	private static int strength;
+
+	public static void DisplayStrength() {
+		System.out.println("Student Strength " + Student.strength);
+
+	}
+
 	Scanner sc = new Scanner(System.in);
 	private int rno;
 	private String studentName;
 	private String motherName;
+
 	private double percentage;
-	private static int strength;
-
-	public int getRno() {
-		return rno;
-	}
-
-	public void setRno(int rno) {
-		this.rno = rno;
-	}
-
-	public String getStudentName() {
-		return studentName;
-	}
-
-	public void setStudentName(String studentName) {
-		this.studentName = studentName;
-	}
-
-	public String getMotherName() {
-		return motherName;
-	}
-
-	public void setMotherName(String motherName) {
-		this.motherName = motherName;
-	}
-
-	public double getPercentage() {
-		return percentage;
-	}
-
-	public void setPercentage(double percentage) {
-		this.percentage = percentage;
-	}
 
 	public void AcceptStudent() {
 
@@ -62,6 +37,22 @@ public class Student {
 		System.out.println("Percentage  is " + this.percentage);
 	}
 
+	public String getMotherName() {
+		return motherName;
+	}
+
+	public double getPercentage() {
+		return percentage;
+	}
+
+	public int getRno() {
+		return rno;
+	}
+
+	public String getStudentName() {
+		return studentName;
+	}
+
 	public int SearchStudent(int rollno) {
 		if (this.rno == rollno) {
 			return 1;
@@ -78,9 +69,20 @@ public class Student {
 		}
 	}
 
-	public static void DisplayStrength() {
-		System.out.println("Student Strength " + Student.strength);
+	public void setMotherName(String motherName) {
+		this.motherName = motherName;
+	}
 
+	public void setPercentage(double percentage) {
+		this.percentage = percentage;
+	}
+
+	public void setRno(int rno) {
+		this.rno = rno;
+	}
+
+	public void setStudentName(String studentName) {
+		this.studentName = studentName;
 	}
 
 }

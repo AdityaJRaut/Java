@@ -4,15 +4,6 @@ import java.util.Stack;
 
 public class StackDemo {
 
-	public static void main(String[] args) {
-		String str = "]]";
-		if (isValid(str)) {
-			System.out.println("Valid String");
-		} else {
-			System.out.println("Invalid String");
-		}
-	}
-
 	public static boolean isValid(String s) {
 		Stack<Character> str = new Stack<Character>();
 		for (char ch : s.toCharArray()) {
@@ -30,6 +21,15 @@ public class StackDemo {
 			}
 		}
 		return str.isEmpty();
+	}
+
+	public static void main(String[] args) {
+		String str = "]]";
+		if (isValid(str)) {
+			System.out.println("Valid String");
+		} else {
+			System.out.println("Invalid String");
+		}
 	}
 
 }

@@ -8,7 +8,7 @@ public class SearchElement {
 
 	public static void main(String[] args) {
 		int ind = 0;
-		Scanner sc=new Scanner(System.in);
+		Scanner sc = new Scanner(System.in);
 		List<String> colors = new ArrayList<String>();
 		colors.add("violet");
 		colors.add("indigo");
@@ -19,11 +19,11 @@ public class SearchElement {
 		colors.add("red");
 		System.out.println("Enter index to search for element");
 		try {
-			ind=sc.nextInt();
-			System.out.println("The element at "+ind+" is "+colors.get(ind));
+			ind = sc.nextInt();
+			System.out.println("The element at " + ind + " is " + colors.get(ind));
 		} catch (IndexOutOfBoundsException e) {
-			System.out.println("No colors inserted above index "+colors.size());
-		}		
+			System.out.println("No colors inserted above index " + colors.size());
+		}
 		sc.close();
 	}
 }

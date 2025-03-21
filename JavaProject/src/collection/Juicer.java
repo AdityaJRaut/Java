@@ -5,24 +5,6 @@ import java.util.PriorityQueue;
 import java.util.Scanner;
 
 public class Juicer {
-	public static void main(String[] args) {
-		Scanner sc = new Scanner(System.in);
-
-		System.out.print("Enter mango juices: ");
-		int mangoJuices = sc.nextInt();
-
-		System.out.print("Enter orange juices: ");
-		int orangeJuices = sc.nextInt();
-
-		System.out.print("Enter pineapple juices: ");
-		int pineappleJuices = sc.nextInt();
-
-		int seconds = calculateTimeRequired(mangoJuices, orangeJuices, pineappleJuices);
-		System.out.print("Time required: " + seconds + " seconds");
-
-		sc.close();
-	}
-
 	private static int calculateTimeRequired(int mango, int orange, int pineapple) {
 		PriorityQueue<Integer> pq = new PriorityQueue<>(Collections.reverseOrder());
 
@@ -56,5 +38,23 @@ public class Juicer {
 		}
 
 		return seconds;
+	}
+
+	public static void main(String[] args) {
+		Scanner sc = new Scanner(System.in);
+
+		System.out.print("Enter mango juices: ");
+		int mangoJuices = sc.nextInt();
+
+		System.out.print("Enter orange juices: ");
+		int orangeJuices = sc.nextInt();
+
+		System.out.print("Enter pineapple juices: ");
+		int pineappleJuices = sc.nextInt();
+
+		int seconds = calculateTimeRequired(mangoJuices, orangeJuices, pineappleJuices);
+		System.out.print("Time required: " + seconds + " seconds");
+
+		sc.close();
 	}
 }

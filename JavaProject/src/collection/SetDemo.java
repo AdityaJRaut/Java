@@ -16,8 +16,8 @@ public class SetDemo {
 		}
 		List<Integer> list = new ArrayList<Integer>(set);
 		Collections.sort(list, Collections.reverseOrder());
-		System.out.println("Max "+Collections.max(list));
-		System.out.println("Min "+Collections.min(list));
+		System.out.println("Max " + Collections.max(list));
+		System.out.println("Min " + Collections.min(list));
 		System.out.println(list);
 
 	}

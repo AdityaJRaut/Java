@@ -11,11 +11,10 @@ public class CreateFile {
 //		
 //		fileWriter.close();
 //		System.out.println("Data Written to File");
-		
-		
-		FileWriter fileWriter=new FileWriter("Folder/file2.txt",true); //append mode
+
+		FileWriter fileWriter = new FileWriter("Folder/file2.txt", true); // append mode
 		fileWriter.append(" Mahendra Singh Dhoni");
-		
+
 		fileWriter.close();
 		System.out.println("Data Written to File");
 	}

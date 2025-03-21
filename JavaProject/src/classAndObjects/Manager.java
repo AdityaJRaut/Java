@@ -7,11 +7,10 @@ public class Manager extends Person implements AssignTask {
 	}
 
 	@Override
-	public void setAssignedTask(Employee employee, String assignedTask) {
-		System.out.println("Assign Task to Employee");
-		assignedTask=sc.next();
-		employee.setAssignedTask(assignedTask);
-		
+	void displayDetails() {
+		System.out.println("Manager Name " + this.name);
+		System.out.println("Age " + this.age);
+
 	}
 
 	@Override
@@ -19,15 +18,15 @@ public class Manager extends Person implements AssignTask {
 		System.out.println("Enter Manager Name");
 		this.setName(sc.next());
 		System.out.println("Enter Age");
-		this.setAge(sc.nextInt());		
+		this.setAge(sc.nextInt());
 	}
 
 	@Override
-	void displayDetails() {
-		System.out.println("Manager Name " + this.name);
-		System.out.println("Age " + this.age);
-		
-		
+	public void setAssignedTask(Employee employee, String assignedTask) {
+		System.out.println("Assign Task to Employee");
+		assignedTask = sc.next();
+		employee.setAssignedTask(assignedTask);
+
 	}
 
 }
