@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
@@ -10,12 +11,19 @@ public class Main {
 		List <Integer> newList=new ArrayList<Integer>();
 			newList=list.stream().map(n->n*n).filter(n->n%2==0).toList();
 			System.out.println(newList);
+=======
+public class Main {
+	public static void main(String[] args) {
+>>>>>>> f7c1cc39a2d42b6c1289a64690820484a357e70e
 		System.out.println("Hello World");
 		String name = "Aditya";
 		System.out.println(name);
 		int myNum = 5;
+<<<<<<< HEAD
 		int res=sum(4,6);
 		System.out.println(res);
+=======
+>>>>>>> f7c1cc39a2d42b6c1289a64690820484a357e70e
 		System.out.println(myNum);
 		String firstName = "Aditya "; // where firstName is identifier
 		String LastName = "Raut";
@@ -57,9 +65,12 @@ public class Main {
 			}
 		}
 	}
+<<<<<<< HEAD
 	
 	public static int sum(int a,int b)
 	{
 		return a+b;
 	}
+=======
+>>>>>>> f7c1cc39a2d42b6c1289a64690820484a357e70e
 }
