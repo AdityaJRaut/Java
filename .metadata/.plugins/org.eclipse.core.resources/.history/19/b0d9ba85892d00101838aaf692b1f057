@@ -1,0 +1,10 @@
+spring.application.name=crud_demo
+
+server.port=8088
+
+# SQL database Configuration
+spring.datasource.driver-class-name=com.mysql.cj.jdbc.Driver
+spring.datasource.url=jdbc:mysql://localhost:3306/demo
+spring.datasource.username=root
+spring.datasource.password=root
+

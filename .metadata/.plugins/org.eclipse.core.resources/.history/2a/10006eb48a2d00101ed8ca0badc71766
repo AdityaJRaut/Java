@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Home Page</title>
+</head>
+<body>
+<table>
+<thead>
+<tr>
+<td>ID</td>
+<td>Name</td>
+<td>Age</td>
+<td>Gender</td>
+</tr>
+<tr>
+
+</tr>
+</thead>
+</table>
+</body>
+</html>

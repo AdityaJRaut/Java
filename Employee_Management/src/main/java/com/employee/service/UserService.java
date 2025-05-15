@@ -1,0 +1,12 @@
+package com.employee.service;
+
+import org.springframework.security.core.userdetails.UserDetailsService;
+
+import com.employee.dto.UserRegistrationDto;
+import com.employee.model.User;
+
+public interface UserService extends UserDetailsService {
+	
+	User save(UserRegistrationDto registrationDto);
+
+}

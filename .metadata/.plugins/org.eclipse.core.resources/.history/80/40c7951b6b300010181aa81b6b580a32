@@ -1,0 +1,13 @@
+package com.annotate.controller;
+
+import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.RequestAttribute;
+
+public class ProductController {
+
+	@GetMapping("/products")
+	public void getProducts(@RequestAttribute String name)
+	{
+		System.out.println("name "+name);
+	}
+}

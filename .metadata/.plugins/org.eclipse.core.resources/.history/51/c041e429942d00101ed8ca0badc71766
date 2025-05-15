@@ -1,0 +1,13 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+<meta charset="UTF-8">
+<title>Home Page</title>
+</head>
+<body>
+	<p>Name:${person.id}</p>
+	<p>Name:${person.name}</p>
+	<p>Name:${person.age}</p>
+	<p>Name:${person.gender}</p>
+</body>
+</html>

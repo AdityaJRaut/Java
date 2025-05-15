@@ -1,0 +1,64 @@
+package com.itp.FirstSpringBoot.controller;
+
+import java.util.Optional;
+
+import org.apache.log4j.Logger;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PathVariable;
+import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.RequestBody;
+import org.springframework.web.bind.annotation.RequestParam;
+import org.springframework.web.bind.annotation.RestController;
+
+import com.itp.FirstSpringBoot.model.Employee;
+import com.itp.FirstSpringBoot.service.EmployeeService;
+
+@RestController
+public class EmployeeController {
+
+	@Autowired
+	EmployeeService employeeService;
+
+	private static final Logger logger = Logger.getLogger(EmployeeController.class);
+
+	@PostMapping("/addemployee")
+	public Employee addEmployee(@RequestParam("name") String ename, @RequestParam("salary") double salary) {
+		Employee employee = new Employee();
+		employee.setName(ename);
+		employee.setSalary(salary);
+		logger.info("Employee is being added with employee id "+employee.getId());
+		System.out.println("Hello";);
+		return employeeService.addEmployee(employee);
+		// return employee;
+	}
+
+	@GetMapping("/employee/{id}")
+	public Optional<Employee> getEmployee(@PathVariable int id) {
+		return employeeService.getEmployee(id);
+	}
+
+	@PostMapping("/addemployeebypathvariable/{name}/{salary}")
+	public Employee addProductByPathVariable(@PathVariable("name") String ename,
+			@PathVariable("salary") double salary) {
+		Employee employee = new Employee();
+		employee.setName(ename);
+		employee.setSalary(salary);
+		return employeeService.addEmployee(employee);
+		// return employee;
+	}
+
+	@PostMapping("/addemployeebypathvariable1/{ename}/{salary}")
+	public Employee addProductByPathVariable1(@PathVariable String ename, @PathVariable double salary) {
+		Employee employee = new Employee();
+		employee.setName(ename);
+		employee.setSalary(salary);
+		return employeeService.addEmployee(employee);
+	}
+
+	@PostMapping("/addemployeebyrequestbody")
+	public Employee addProduct(@RequestBody Employee employee) {
+		return employeeService.addEmployee(employee);
+
+	}
+}

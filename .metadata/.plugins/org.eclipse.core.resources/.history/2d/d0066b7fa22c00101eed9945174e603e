@@ -1,0 +1,15 @@
+package com.itp.FirstSpringBoot;
+
+public class StudentNotFoundException extends RuntimeException {
+
+	/**
+	 * 
+	 */
+	private static final long serialVersionUID = 1L;
+	
+	public EmployeeNotFoundException(String errorMessage)
+	{
+		super(errorMessage);
+	}
+	
+}

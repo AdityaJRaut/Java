@@ -1,0 +1,17 @@
+package stream;
+
+import java.util.Arrays;
+import java.util.Comparator;
+import java.util.List;
+
+public class EmployeeMain {
+
+	public static void main(String args[]) {
+		List<Employee> employees = Arrays.asList(new Employee(1, "Aditya", 85000), new Employee(1, "Bhushan", 80000),
+				new Employee(1, "Aditya K", 75000), new Employee(1, "Nilesh", 83000), new Employee(1, "Sarvesh", 55000),
+				new Employee(1, "Abhi", 95000), new Employee(1, "Sachin", 105000), new Employee(1, "Nilesh", 102000),
+				new Employee(1, "Bhargav", 60000));
+		
+		employees.stream().collect.sorted(Comparator.comparingDouble(Employee::getSalary)).skip(1);
+	}
+}

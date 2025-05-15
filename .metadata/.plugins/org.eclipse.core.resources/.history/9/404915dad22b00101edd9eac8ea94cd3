@@ -1,0 +1,5 @@
+insert into student values (1,"Aditya",100);
+insert into student values (2,"Bhushan",99);
+insert into student values (3,"Bhavesh",98);
+insert into student values (4,"Dinesh",97);
+insert into student values (5,"Nilesh",96);

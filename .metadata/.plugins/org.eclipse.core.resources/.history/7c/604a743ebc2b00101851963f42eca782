@@ -1,0 +1,12 @@
+package dsa;
+
+public class AnagramString {
+
+	public static void main(String[] args)
+	{
+		AnagramString anagramString=new AnagramString();
+		String[] strs= {"cat","bat","tac","tab","act","mot","tom","mot"};
+		System.out.println(anagramString.groupAnagrams(strs));
+	}
+
+}

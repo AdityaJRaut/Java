@@ -1,0 +1,5 @@
+package com.annotate.controller;
+
+public class ProductController {
+
+}

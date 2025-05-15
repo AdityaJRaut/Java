@@ -1,0 +1,5 @@
+package com.spring.um.controller;
+
+public class UserController {
+
+}

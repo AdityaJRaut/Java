@@ -1,0 +1,5 @@
+package com.spring.um.service;
+
+public class UserService {
+
+}

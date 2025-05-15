@@ -1,0 +1,33 @@
+package com.itp.FirstSpringBoot.exception;
+
+import java.time.LocalDateTime;
+
+import org.springframework.http.HttpStatus;
+import org.springframework.http.ResponseEntity;
+import org.springframework.web.bind.annotation.ControllerAdvice;
+import org.springframework.web.bind.annotation.ExceptionHandler;
+
+import com.itp.FirstSpringBoot.response.ErrorResponse;
+
+@ControllerAdvice
+public class GlobalExceptionHandler {
+
+	@ExceptionHandler(EmployeeNotFoundException.class)
+	public ResponseEntity<ErrorResponse> employeeNotFound(EmployeeNotFoundException ex) {
+
+		// Using simple response entity
+		// return new ResponseEntity<String>(ex.getMessage(), HttpStatus.NOT_FOUND);
+
+		// Using Hash Map
+//		Map<String, Object> body = new HashMap<>();
+//		body.put("error", "Employee not found");
+//		body.put("message", ex.getMessage());
+//		body.put("timeStamp", LocalDateTime.now());
+//		return new ResponseEntity<Map<String, Object>>(body, HttpStatus.NOT_FOUND);
+
+		// using errorResponse class
+		return new ResponseEntity<ErrorResponse>(
+				new ErrorResponse("Employee not found using errorresponse", ex.getMessage(), LocalDateTime.now()), HttpStatus.NOT_FOUND);
+
+	}
+}

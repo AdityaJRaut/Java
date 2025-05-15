@@ -1,0 +1,57 @@
+package stream;
+
+public class SampleData {
+
+	
+	import java.time.LocalDateTime;
+import java.util.List;
+
+	class Product {
+	    String productId;
+	    String name;
+	    int quantity;
+	    boolean inStock;
+	    double price;
+
+	    public Product(String productId, String name, int quantity, boolean inStock, double price) {
+	        this.productId = productId;
+	        this.name = name;
+	        this.quantity = quantity;
+	        this.inStock = inStock;
+	        this.price = price;
+	    }
+
+	    public double getTotalPrice() {
+	        return quantity * price;
+	    }
+
+	    @Override
+	    public String toString() {
+	        return name + " x" + quantity + " @ " + price + " [" + (inStock ? "In Stock" : "Out of Stock") + "]";
+	    }
+	}
+
+	class Order {
+	    String orderId;
+	    List<Product> products;
+	    LocalDateTime orderTime;
+	    double totalValue;
+
+	    public Order(String orderId, List<Product> products, LocalDateTime orderTime) {
+	        this.orderId = orderId;
+	        this.products = products;
+	        this.orderTime = orderTime;
+	        this.totalValue = calculateTotalValue();
+	    }
+
+	    private double calculateTotalValue() {
+	        return products.stream().mapToDouble(Product::getTotalPrice).sum();
+	    }
+
+	    @Override
+	    public String toString() {
+	        return "Order #" + orderId + "\nProducts: " + products + "\nTotal: $" + totalValue + "\nTime: " + orderTime + "\n";
+	    }
+	}
+
+}

@@ -1,0 +1,9 @@
+package stream;
+
+public class CharacterOccurences {
+
+	public static void main(String args[])
+	{
+		String name="Len"
+	}
+}

@@ -1,0 +1,46 @@
+package com.spring.crud.controller;
+
+import java.util.List;
+import java.util.Optional;
+
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PathVariable;
+import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.RequestBody;
+import org.springframework.web.bind.annotation.RestController;
+
+import com.spring.crud.model.Student;
+import com.spring.crud.service.StudentService;
+
+@RestController
+public class StudentController {
+
+	@Autowired
+	StudentService studentService;
+
+	@PostMapping("/addstudent")
+	public Student addStudent(@RequestBody Student student) {
+		return studentService.saveStudent(student);
+	}
+
+	@PostMapping("/liststudents")
+	public List<Student> listStudents() {
+		return studentService.listStudents();
+	}
+
+	@GetMapping("/getstudent/{id}")
+	public Optional<Student> getStudent(@PathVariable Integer id) {
+		return studentService.getStudent(id);
+	}
+
+	@PostMapping("/updatestudent")
+	public void updateStudent(@RequestBody Student student) {
+		studentService.updateStudent(student);
+	}
+
+	@GetMapping("/deletestudent/{id}")
+	public void deleteStudent(@PathVariable Integer id) {
+		studentService.deleteStudent(id);
+	}
+}

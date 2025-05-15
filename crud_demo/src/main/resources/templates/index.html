@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org" >
+<head>
+    <meta charset="UTF-8">
+    <title>Home Page</title>
+    <!-- Bootstrap 5 CDN -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+</head>
+<body>
+<div class="container mt-5">
+
+    <h1 class="mb-4 text-center">Person Directory</h1>
+
+    <!-- Flash Message -->
+    <div th:if="${message}" class="alert alert-success alert-dismissible fade show" role="alert">
+        <span th:text="${message}"></span>
+        <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+    </div>
+
+    <!-- Add Person Button -->
+    <div class="mb-3 text-end">
+        <a th:href="@{/addperson}" class="btn btn-primary">
+            <i class="bi bi-person-plus"></i> Add Person
+        </a>
+    </div>
+
+    <!-- Table -->
+    <div class="table-responsive">
+        <table class="table table-bordered table-striped table-hover align-middle">
+            <thead class="table-dark">
+                <tr>
+                    <th>#</th>
+                    <th>Name</th>
+                    <th>Age</th>
+                    <th>Gender</th>
+                    <th colspan="3" class="text-center">Actions</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr th:each="person, iterStat : ${persons}">
+                    <td th:text="${iterStat.count}">1</td>
+                    <td th:text="${person.name}">John Doe</td>
+                    <td th:text="${person.age}">30</td>
+                    <td th:text="${person.gender}">Male</td>
+                    <td><a th:href="@{/viewperson(id=${person.id})}" class="btn btn-info btn-sm">View</a></td>
+                    <td><a th:href="@{/editperson(id=${person.id})}" class="btn btn-warning btn-sm">Edit</a></td>
+                    <td><a th:href="@{/deleteperson(id=${person.id})}" class="btn btn-danger btn-sm" 
+                           onclick="return confirm('Are you sure you want to delete this person?')">Delete</a></td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+</div>
+
+<!-- Bootstrap JS for dismissable alert -->
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>

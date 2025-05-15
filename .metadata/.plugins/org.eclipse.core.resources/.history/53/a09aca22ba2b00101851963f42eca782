@@ -1,0 +1,24 @@
+package dsa;
+
+import java.util.ArrayList;
+import java.util.Arrays;
+import java.util.HashMap;
+import java.util.List;
+import java.util.Map;
+
+public class AnagramString {
+
+	public static void main(String[] args) {
+		String[] strs = {"eat","tea","tan","ate","nat","bat"};
+		Map<String, List<String>> anagramMap=new HashMap<>();
+		for(String word:strs)
+		{
+			char[] ch=word.toCharArray();
+			Arrays.sort(ch);
+			String sortedWord=String.valueOf(ch);
+			anagramMap.putIfAbsent(sortedWord, new ArrayList<String>());
+		}
+
+	}
+
+}

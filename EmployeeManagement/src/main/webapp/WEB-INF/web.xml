@@ -1,0 +1,63 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<web-app xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xmlns="http://xmlns.jcp.org/xml/ns/javaee"
+	xsi:schemaLocation="http://xmlns.jcp.org/xml/ns/javaee http://xmlns.jcp.org/xml/ns/javaee/web-app_4_0.xsd"
+	id="WebApp_ID" version="4.0">
+	<display-name>EmployeeManagement</display-name>
+	<welcome-file-list>
+		<welcome-file>login.html</welcome-file>
+	</welcome-file-list>
+	<servlet>
+		<servlet-name>Login</servlet-name>
+		<servlet-class>com.Employee.LoginServlet</servlet-class>
+	</servlet>
+	<servlet-mapping>
+		<servlet-name>Login</servlet-name>
+		<url-pattern>/login</url-pattern>
+	</servlet-mapping>
+	<servlet-mapping>
+		<servlet-name>EmployeeHome</servlet-name>
+		<url-pattern>/employee-home</url-pattern>
+	</servlet-mapping>
+	<servlet>
+		<servlet-name>EmployeeHome</servlet-name>
+		<servlet-class>com.Employee.EmployeeHomeServlet</servlet-class>
+	</servlet>
+
+
+	<servlet-mapping>
+		<servlet-name>AddEmployee</servlet-name>
+		<url-pattern>/add-employee</url-pattern>
+	</servlet-mapping>
+	<servlet>
+		<servlet-name>AddEmployee</servlet-name>
+		<servlet-class>com.Employee.AddEmployeeServlet</servlet-class>
+	</servlet>
+
+	<servlet-mapping>
+		<servlet-name>SaveEmployee</servlet-name>
+		<url-pattern>/save-employee</url-pattern>
+	</servlet-mapping>
+	<servlet>
+		<servlet-name>SaveEmployee</servlet-name>
+		<servlet-class>com.Employee.SaveEmployeeServlet</servlet-class>
+	</servlet>
+
+	<servlet-mapping>
+		<servlet-name>Logout</servlet-name>
+		<url-pattern>/logout</url-pattern>
+	</servlet-mapping>
+	<servlet>
+		<servlet-name>Logout</servlet-name>
+		<servlet-class>com.Employee.LogoutServlet</servlet-class>
+	</servlet>
+
+	<servlet-mapping>
+		<servlet-name>UpdateEmployee</servlet-name>
+		<url-pattern>/update-employee</url-pattern>
+	</servlet-mapping>
+	<servlet>
+		<servlet-name>UpdateEmployee</servlet-name>
+		<servlet-class>com.Employee.UpdateEmployeeServlet</servlet-class>
+	</servlet>
+</web-app>

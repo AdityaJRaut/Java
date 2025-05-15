@@ -1,0 +1,27 @@
+package com.employee.service;
+
+import org.springframework.security.core.userdetails.UserDetails;
+import org.springframework.security.core.userdetails.UsernameNotFoundException;
+import org.springframework.stereotype.Service;
+
+import com.employee.dto.UserRegistrationDto;
+import com.employee.model.User;
+
+@Service
+public class UserServiceImpl implements UserService {
+
+	private UserService userService;
+	
+	@Override
+	public UserDetails loadUserByUsername(String username) throws UsernameNotFoundException {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+	@Override
+	public User save(UserRegistrationDto registrationDto) {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+}

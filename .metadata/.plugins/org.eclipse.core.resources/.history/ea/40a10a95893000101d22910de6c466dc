@@ -1,0 +1,27 @@
+package stream;
+
+import java.util.Arrays;
+import java.util.List;
+import java.util.Map;
+import java.util.stream.Collectors;
+
+public class MapGrouping {
+	public static void main(String args[]) {
+
+		List<Book> books=Arrays.asList(new Book("Book A", "Aditya","fiction"),
+				new Book("Book B", "Bhushan","non-fiction"),
+				new Book("Book C", "Dinesh","children"),
+				new Book("Book D", "Nilesh","fiction"));
+		
+		Map<String,List<Book>> bookGroup=books.stream().
+				collect(Collectors.groupingBy(Book::getCategory));
+		
+		bookGroup.forEach(null);
+		
+		bookGroup.forEach((category,booklList)->{
+			System.out.println("Category "+category);
+			booklList.forEach(book->System.out.println(" - "+book.getBookName()));
+		});
+		
+	}
+}

@@ -1,0 +1,93 @@
+package com.itp.FirstSpringBoot.controller;
+
+import java.util.ArrayList;
+import java.util.List;
+import java.util.Optional;
+
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.data.domain.Page;
+import org.springframework.http.HttpStatus;
+import org.springframework.http.ResponseEntity;
+import org.springframework.validation.BindingResult;
+import org.springframework.validation.FieldError;
+import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PathVariable;
+import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.RequestBody;
+import org.springframework.web.bind.annotation.RequestParam;
+import org.springframework.web.bind.annotation.RestController;
+
+import com.itp.FirstSpringBoot.model.Employee;
+import com.itp.FirstSpringBoot.response.ValidationErrorResponse;
+import com.itp.FirstSpringBoot.service.EmployeeService;
+
+import jakarta.validation.Valid;
+import lombok.extern.slf4j.Slf4j;
+
+@Slf4j
+@RestController
+public class EmployeeController {
+
+	@Autowired
+	EmployeeService employeeService;
+
+	@PostMapping("/addemployee")
+	public ResponseEntity<?> addEmployee( @Valid BindingResult bindingResult,@RequestParam("name") String ename, @RequestParam double salary
+			) {
+		Employee employee = new Employee();
+		log.info("Employee is being added with employee id " + employee.getId());
+		if (bindingResult.hasErrors()) {
+			List<ValidationErrorResponse> errors = new ArrayList<>();
+			for (FieldError error : bindingResult.getFieldErrors()) {
+				ValidationErrorResponse validationErrorResponse = new ValidationErrorResponse(error.getDefaultMessage(),
+						error.getField(), error.getRejectedValue());
+				errors.add(validationErrorResponse);
+			}
+			return new ResponseEntity<>(errors, HttpStatus.BAD_REQUEST);
+		}
+
+		employee.setName(ename);
+		employee.setSalary(salary);
+		return new ResponseEntity<>(employeeService.addEmployee(employee), HttpStatus.CREATED);
+
+		// return employee;
+	}
+
+	@GetMapping("/employee/{id}")
+	public Optional<Employee> getEmployee(@PathVariable int id) {
+		return employeeService.getEmployee(id);
+	}
+
+	@PostMapping("/addemployeebypathvariable/{name}/{salary}")
+	public Employee addProductByPathVariable(@PathVariable("name") String ename, @PathVariable double salary) {
+		Employee employee = new Employee();
+		employee.setName(ename);
+		employee.setSalary(salary);
+		return employeeService.addEmployee(employee);
+		// return employee;
+	}
+
+	@PostMapping("/addemployeebypathvariable1/{ename}/{salary}")
+	public Employee addProductByPathVariable1(@PathVariable String ename, @PathVariable double salary) {
+		Employee employee = new Employee();
+		employee.setName(ename);
+		employee.setSalary(salary);
+		return employeeService.addEmployee(employee);
+	}
+
+	@GetMapping("/listemployees")
+	public List<Employee> listEmployee() {
+		return employeeService.listEmployee();
+	}
+
+	@PostMapping("/addemployeebyrequestbody")
+	public Employee addProduct(@RequestBody Employee employee) {
+		return employeeService.addEmployee(employee);
+
+	}
+
+	@GetMapping("/employeepage/{pageNumber}/{pageSize}")
+	public Page<Employee> employeePage(@PathVariable int pageNumber, @PathVariable int pageSize) {
+		return employeeService.employeeByPage(pageNumber, pageSize);
+	}
+}

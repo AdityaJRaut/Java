@@ -1,0 +1,34 @@
+package com.aditya.service;
+
+import java.util.Optional;
+
+import org.springframework.stereotype.Service;
+
+import com.aditya.exception.PersonNotFoundException;
+import com.aditya.model.Person;
+import com.aditya.repository.PersonRepository;
+
+@Service
+public class PersonService {
+
+    private PersonRepository personRepository;
+
+    public Person save(Person person)
+    {
+    	return personRepository.save(person);
+    }
+    
+    public Optional<Person> findById(long id)
+    {
+    	Optional<Person> person =personRepository.findById(id);
+    	if(person.isPresent())
+    	{
+    		return person;
+    	}
+    	else
+    	{
+    		throw new PersonNotFoundException("Person Not found with id : "+id);
+    	}
+    	
+    }
+}

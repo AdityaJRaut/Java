@@ -1,0 +1,25 @@
+package com.aditya.service;
+
+import java.util.Optional;
+
+import org.springframework.stereotype.Service;
+
+import com.aditya.model.Person;
+import com.aditya.repository.PersonRepository;
+
+@Service
+public class PersonService {
+
+    private PersonRepository personRepository;
+
+    public Person save(Person person)
+    {
+    	return personRepository.save(person);
+    }
+    
+    public Optional<Person> findById(long id)
+    {
+    	Person person =personRepository.findById(id);
+    	
+    }
+}

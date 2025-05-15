@@ -1,0 +1,11 @@
+package com.itp.FirstSpringBoot.response;
+
+import lombok.Data;
+
+@Data
+public class ValidationErrorResponse {
+
+	private String message;
+	private String rejectedField;
+	private Object rejectedValue;
+}

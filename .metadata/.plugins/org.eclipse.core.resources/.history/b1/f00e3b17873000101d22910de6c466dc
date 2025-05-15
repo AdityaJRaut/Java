@@ -1,0 +1,20 @@
+package stream;
+
+public class Book {
+
+	private String bookName;
+	private String authorName;
+	private String Category;
+	public Book() {
+		super();
+		// TODO Auto-generated constructor stub
+	}
+	public Book(String bookName, String authorName, String category) {
+		super();
+		this.bookName = bookName;
+		this.authorName = authorName;
+		Category = category;
+	}
+	
+	
+}

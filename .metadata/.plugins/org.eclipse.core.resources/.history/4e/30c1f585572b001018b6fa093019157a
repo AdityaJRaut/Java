@@ -1,0 +1,10 @@
+package com.spring.crud.model;
+
+
+public class Student {
+	
+	private int rno;
+	private String name;
+	private double marks;
+
+}

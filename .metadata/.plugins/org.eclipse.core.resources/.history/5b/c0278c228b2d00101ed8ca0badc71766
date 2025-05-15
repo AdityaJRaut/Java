@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Home Page</title>
+</head>
+<body>
+<table>
+<thead>
+<tr>
+<td>ID</td>
+<td>Name</td>
+<td>Age</td>
+<td>Gender</td>
+</tr>
+<tr th:each="person: ${persons}">
+    <td th:text="${person.id}" />
+    <td th:text="${person.name}" />
+    <td th:text="${person.age}" />
+    <td th:text="${person.gender}" />
+</tr>
+</thead>
+</table>
+</body>
+</html>

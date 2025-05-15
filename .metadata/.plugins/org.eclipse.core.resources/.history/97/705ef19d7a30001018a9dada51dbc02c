@@ -1,0 +1,2 @@
+spring.application.name=spring-annotations
+server.port=8088

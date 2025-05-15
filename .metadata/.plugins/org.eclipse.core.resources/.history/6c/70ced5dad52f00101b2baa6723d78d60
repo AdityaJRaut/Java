@@ -1,0 +1,44 @@
+package com.itp.FirstSpringBoot.service;
+
+import java.util.List;
+import java.util.Optional;
+
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.data.domain.Page;
+import org.springframework.data.domain.PageRequest;
+import org.springframework.data.domain.Sort;
+import org.springframework.stereotype.Service;
+
+import com.itp.FirstSpringBoot.exception.EmployeeNotFoundException;
+import com.itp.FirstSpringBoot.model.Employee;
+import com.itp.FirstSpringBoot.repository.EmployeeRepository;
+
+@Service
+public class EmployeeService {
+
+	@Autowired
+	EmployeeRepository employeeRepository;
+
+	public Employee addEmployee(Employee employee) {
+		return employeeRepository.save(employee);
+	}
+
+	public Optional<Employee> getEmployee(int id) {
+		Optional<Employee> employee = employeeRepository.findById(id);
+		if (employee.isPresent()) {
+			return employee;
+		} else {
+			throw new EmployeeNotFoundException("Employee not found with id " + id);
+		}
+	}
+
+	public List<Employee> listEmployee() {
+		return employeeRepository.findAll();
+	}
+
+	public Page<Employee> employeeByPage(int pageNumber, int pageSize, String sortDirection) {
+		Sort sort = Sort.by(Sort.Direction.valueOf(sortDirection.toUpperCase(),"id"));
+		Page<Employee> employeePage = employeeRepository.findAll(PageRequest.of(pageNumber, pageSize, sort));
+		return employeePage;
+	}
+}

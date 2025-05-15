@@ -1,0 +1,80 @@
+package stream;
+
+import java.time.LocalDateTime;
+import java.util.Arrays;
+import java.util.List;
+import java.util.stream.Collectors;
+
+public class SampleData {
+
+	public static void main(String args[])
+	{
+		Product p1 = new Product("P001", "Laptop", 1, true, 999.99);
+        Product p2 = new Product("P002", "Mouse", 2, true, 25.50);
+        Product p3 = new Product("P003", "Keyboard", 1, false, 49.99);
+        Product p4 = new Product("P004", "Monitor", 1, true, 199.95);
+        Product p5 = new Product("P005", "USB Cable", 3, false, 5.99);
+
+        Order o1 = new Order("O1001", Arrays.asList(p1, p2), LocalDateTime.now().minusHours(3));
+        Order o2 = new Order("O1002", Arrays.asList(p3, p5), LocalDateTime.now().minusHours(26));
+        Order o3 = new Order("O1003", Arrays.asList(p2, p4), LocalDateTime.now().minusHours(5));
+
+        List<Order> orders = Arrays.asList(o1, o2, o3);
+        List<Order> orderShow=orders.stream()
+        		.filter(order->order.orderTime.isAfter(LocalDateTime.now().minusHours(24)))
+        		.filter(order->order.totalValue>500)
+        		.collect(Collectors.toList());
+        System.out.println(orderShow);
+        
+        List<Order> flatMapOrder=orders.stream().flatMap(List::stream);
+	}
+	
+	static class Product {
+		String productId;
+		String name;
+		int quantity;
+		boolean inStock;
+		double price;
+
+		public Product(String productId, String name, int quantity, boolean inStock, double price) {
+			this.productId = productId;
+			this.name = name;
+			this.quantity = quantity;
+			this.inStock = inStock;
+			this.price = price;
+		}
+
+		public double getTotalPrice() {
+			return quantity * price;
+		}
+
+		@Override
+		public String toString() {
+			return name + " x" + quantity + " @ " + price + " [" + (inStock ? "In Stock" : "Out of Stock") + "]";
+		}
+	}
+
+	static class Order {
+		String orderId;
+		List<Product> products;
+		LocalDateTime orderTime;
+		double totalValue;
+
+		public Order(String orderId, List<Product> products, LocalDateTime orderTime) {
+			this.orderId = orderId;
+			this.products = products;
+			this.orderTime = orderTime;
+			this.totalValue = calculateTotalValue();
+		}
+
+		private double calculateTotalValue() {
+			return products.stream().mapToDouble(Product::getTotalPrice).sum();
+		}
+
+		@Override
+		public String toString() {
+			return "Order #" + orderId + "\nProducts: " + products + "\nTotal: $" + totalValue + "\nTime: " + orderTime
+					+ "\n";
+		}
+	}
+}

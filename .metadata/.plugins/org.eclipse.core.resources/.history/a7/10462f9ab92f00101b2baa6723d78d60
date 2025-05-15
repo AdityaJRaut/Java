@@ -1,0 +1,26 @@
+package stream;
+
+import java.util.ArrayList;
+import java.util.List;
+import java.util.Map;
+import java.util.stream.Collectors;
+
+public class CharacterOccurences {
+
+	public static void main(String args[])
+	{
+		String name="Lenze DSC";
+		char[] ch=name.toCharArray();
+		List<Character> chars=new ArrayList<>();
+		for(char c:ch)
+		{
+			if(!Character.isWhitespace(c))
+			{
+				chars.add(c);
+			}
+		}
+		Map<Object, Long> cMap=chars.stream().collect(Collectors.groupingBy(singleChar->singleChar,Collectors.counting()));
+		System.out.println(cMap);
+
+	}
+}

@@ -1,0 +1,94 @@
+[2025-05-09 15:33:31] INFO  c.i.F.FirstSpringBootApplication - Starting FirstSpringBootApplication using Java 21.0.7 with PID 5964 (C:\Users\Aditya Raut\eclipse-workspace\FirstSpringBoot\target\classes started by Aditya Raut in C:\Users\Aditya Raut\eclipse-workspace\FirstSpringBoot)
+[2025-05-09 15:33:31] INFO  c.i.F.FirstSpringBootApplication - No active profile set, falling back to 1 default profile: "default"
+[2025-05-09 15:33:31] INFO  o.s.b.d.e.DevToolsPropertyDefaultsPostProcessor - Devtools property defaults active! Set 'spring.devtools.add-properties' to 'false' to disable
+[2025-05-09 15:33:31] INFO  o.s.b.d.e.DevToolsPropertyDefaultsPostProcessor - For additional web related logging consider setting the 'logging.level.web' property to 'DEBUG'
+[2025-05-09 15:33:33] INFO  o.s.d.r.c.RepositoryConfigurationDelegate - Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+[2025-05-09 15:33:33] INFO  o.s.d.r.c.RepositoryConfigurationDelegate - Finished Spring Data repository scanning in 119 ms. Found 1 JPA repository interface.
+[2025-05-09 15:33:34] INFO  o.s.b.w.e.tomcat.TomcatWebServer - Tomcat initialized with port 8088 (http)
+[2025-05-09 15:33:34] INFO  o.a.catalina.core.StandardService - Starting service [Tomcat]
+[2025-05-09 15:33:34] INFO  o.a.catalina.core.StandardEngine - Starting Servlet engine: [Apache Tomcat/10.1.40]
+[2025-05-09 15:33:34] INFO  o.a.c.c.C.[Tomcat].[localhost].[/] - Initializing Spring embedded WebApplicationContext
+[2025-05-09 15:33:34] INFO  o.s.b.w.s.c.ServletWebServerApplicationContext - Root WebApplicationContext: initialization completed in 3219 ms
+[2025-05-09 15:33:35] INFO  o.h.jpa.internal.util.LogHelper - HHH000204: Processing PersistenceUnitInfo [name: default]
+[2025-05-09 15:33:35] INFO  org.hibernate.Version - HHH000412: Hibernate ORM core version 6.6.13.Final
+[2025-05-09 15:33:35] INFO  o.h.c.i.RegionFactoryInitiator - HHH000026: Second-level cache disabled
+[2025-05-09 15:33:36] INFO  o.s.o.j.p.SpringPersistenceUnitInfo - No LoadTimeWeaver setup: ignoring JPA class transformer
+[2025-05-09 15:33:36] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Starting...
+[2025-05-09 15:33:36] INFO  com.zaxxer.hikari.pool.HikariPool - HikariPool-1 - Added connection com.mysql.cj.jdbc.ConnectionImpl@71bd82a5
+[2025-05-09 15:33:36] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Start completed.
+[2025-05-09 15:33:37] WARN  org.hibernate.orm.deprecation - HHH90000025: MySQL8Dialect does not need to be specified explicitly using 'hibernate.dialect' (remove the property setting and it will be selected by default)
+[2025-05-09 15:33:37] WARN  org.hibernate.orm.deprecation - HHH90000026: MySQL8Dialect has been deprecated; use org.hibernate.dialect.MySQLDialect instead
+[2025-05-09 15:33:37] INFO  o.hibernate.orm.connections.pooling - HHH10001005: Database info:
+	Database JDBC URL [Connecting through datasource 'HikariDataSource (HikariPool-1)']
+	Database driver: undefined/unknown
+	Database version: 8.0
+	Autocommit mode: undefined/unknown
+	Isolation level: undefined/unknown
+	Minimum pool size: undefined/unknown
+	Maximum pool size: undefined/unknown
+[2025-05-09 15:33:38] INFO  o.h.e.t.j.p.i.JtaPlatformInitiator - HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
+[2025-05-09 15:33:38] INFO  o.s.o.j.LocalContainerEntityManagerFactoryBean - Initialized JPA EntityManagerFactory for persistence unit 'default'
+[2025-05-09 15:33:39] WARN  o.s.b.a.o.j.JpaBaseConfiguration$JpaWebConfiguration - spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+[2025-05-09 15:33:40] INFO  o.s.b.d.a.OptionalLiveReloadServer - LiveReload server is running on port 35729
+[2025-05-09 15:33:40] INFO  o.s.b.w.e.tomcat.TomcatWebServer - Tomcat started on port 8088 (http) with context path '/'
+[2025-05-09 15:33:40] INFO  c.i.F.FirstSpringBootApplication - Started FirstSpringBootApplication in 9.675 seconds (process running for 10.592)
+[2025-05-09 15:34:00] INFO  o.a.c.c.C.[Tomcat].[localhost].[/] - Initializing Spring DispatcherServlet 'dispatcherServlet'
+[2025-05-09 15:34:00] INFO  o.s.web.servlet.DispatcherServlet - Initializing Servlet 'dispatcherServlet'
+[2025-05-09 15:34:00] INFO  o.s.web.servlet.DispatcherServlet - Completed initialization in 4 ms
+[2025-05-09 15:34:00] INFO  c.i.F.controller.EmployeeController - Employee is being added with employee id 0
+[2025-05-09 15:34:57] INFO  o.s.b.d.a.LocalDevToolsAutoConfiguration$RestartingClassPathChangeChangedEventListener - Restarting due to 1 class path change (0 additions, 0 deletions, 1 modification)
+[2025-05-09 15:34:57] INFO  o.s.b.w.e.tomcat.GracefulShutdown - Commencing graceful shutdown. Waiting for active requests to complete
+[2025-05-09 15:34:57] INFO  o.s.b.w.e.tomcat.GracefulShutdown - Graceful shutdown complete
+[2025-05-09 15:34:57] INFO  o.s.o.j.LocalContainerEntityManagerFactoryBean - Closing JPA EntityManagerFactory for persistence unit 'default'
+[2025-05-09 15:34:57] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Shutdown initiated...
+[2025-05-09 15:34:57] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Shutdown completed.
+[2025-05-09 15:34:57] INFO  c.i.F.FirstSpringBootApplication - Starting FirstSpringBootApplication using Java 21.0.7 with PID 5964 (C:\Users\Aditya Raut\eclipse-workspace\FirstSpringBoot\target\classes started by Aditya Raut in C:\Users\Aditya Raut\eclipse-workspace\FirstSpringBoot)
+[2025-05-09 15:34:57] INFO  c.i.F.FirstSpringBootApplication - No active profile set, falling back to 1 default profile: "default"
+[2025-05-09 15:34:58] INFO  o.s.d.r.c.RepositoryConfigurationDelegate - Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+[2025-05-09 15:34:58] INFO  o.s.d.r.c.RepositoryConfigurationDelegate - Finished Spring Data repository scanning in 85 ms. Found 1 JPA repository interface.
+[2025-05-09 15:34:59] INFO  o.s.b.w.e.tomcat.TomcatWebServer - Tomcat initialized with port 8088 (http)
+[2025-05-09 15:34:59] INFO  o.a.catalina.core.StandardService - Starting service [Tomcat]
+[2025-05-09 15:34:59] INFO  o.a.catalina.core.StandardEngine - Starting Servlet engine: [Apache Tomcat/10.1.40]
+[2025-05-09 15:34:59] INFO  o.a.c.c.C.[Tomcat].[localhost].[/] - Initializing Spring embedded WebApplicationContext
+[2025-05-09 15:34:59] INFO  o.s.b.w.s.c.ServletWebServerApplicationContext - Root WebApplicationContext: initialization completed in 1554 ms
+[2025-05-09 15:34:59] INFO  o.h.jpa.internal.util.LogHelper - HHH000204: Processing PersistenceUnitInfo [name: default]
+[2025-05-09 15:34:59] INFO  o.h.c.i.RegionFactoryInitiator - HHH000026: Second-level cache disabled
+[2025-05-09 15:34:59] INFO  o.s.o.j.p.SpringPersistenceUnitInfo - No LoadTimeWeaver setup: ignoring JPA class transformer
+[2025-05-09 15:34:59] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-2 - Starting...
+[2025-05-09 15:34:59] INFO  com.zaxxer.hikari.pool.HikariPool - HikariPool-2 - Added connection com.mysql.cj.jdbc.ConnectionImpl@46630a0a
+[2025-05-09 15:34:59] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-2 - Start completed.
+[2025-05-09 15:34:59] WARN  org.hibernate.orm.deprecation - HHH90000025: MySQL8Dialect does not need to be specified explicitly using 'hibernate.dialect' (remove the property setting and it will be selected by default)
+[2025-05-09 15:34:59] WARN  org.hibernate.orm.deprecation - HHH90000026: MySQL8Dialect has been deprecated; use org.hibernate.dialect.MySQLDialect instead
+[2025-05-09 15:34:59] INFO  o.hibernate.orm.connections.pooling - HHH10001005: Database info:
+	Database JDBC URL [Connecting through datasource 'HikariDataSource (HikariPool-2)']
+	Database driver: undefined/unknown
+	Database version: 8.0
+	Autocommit mode: undefined/unknown
+	Isolation level: undefined/unknown
+	Minimum pool size: undefined/unknown
+	Maximum pool size: undefined/unknown
+[2025-05-09 15:34:59] INFO  o.h.e.t.j.p.i.JtaPlatformInitiator - HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
+[2025-05-09 15:34:59] INFO  o.s.o.j.LocalContainerEntityManagerFactoryBean - Initialized JPA EntityManagerFactory for persistence unit 'default'
+[2025-05-09 15:34:59] WARN  o.s.b.a.o.j.JpaBaseConfiguration$JpaWebConfiguration - spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+[2025-05-09 15:35:00] INFO  o.s.b.d.a.OptionalLiveReloadServer - LiveReload server is running on port 35729
+[2025-05-09 15:35:00] INFO  o.s.b.w.e.tomcat.TomcatWebServer - Tomcat started on port 8088 (http) with context path '/'
+[2025-05-09 15:35:00] INFO  c.i.F.FirstSpringBootApplication - Started FirstSpringBootApplication in 2.629 seconds (process running for 90.617)
+[2025-05-09 15:35:00] INFO  o.s.b.d.a.ConditionEvaluationDeltaLoggingListener - Condition evaluation unchanged
+[2025-05-09 15:36:26] INFO  o.s.b.d.a.LocalDevToolsAutoConfiguration$RestartingClassPathChangeChangedEventListener - Restarting due to 1 class path change (0 additions, 0 deletions, 1 modification)
+[2025-05-09 15:36:26] INFO  o.s.b.w.e.tomcat.GracefulShutdown - Commencing graceful shutdown. Waiting for active requests to complete
+[2025-05-09 15:36:26] INFO  o.s.b.w.e.tomcat.GracefulShutdown - Graceful shutdown complete
+[2025-05-09 15:36:26] INFO  o.s.o.j.LocalContainerEntityManagerFactoryBean - Closing JPA EntityManagerFactory for persistence unit 'default'
+[2025-05-09 15:36:26] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-2 - Shutdown initiated...
+[2025-05-09 15:36:26] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-2 - Shutdown completed.
+[2025-05-09 15:36:26] INFO  c.i.F.FirstSpringBootApplication - Starting FirstSpringBootApplication using Java 21.0.7 with PID 5964 (C:\Users\Aditya Raut\eclipse-workspace\FirstSpringBoot\target\classes started by Aditya Raut in C:\Users\Aditya Raut\eclipse-workspace\FirstSpringBoot)
+[2025-05-09 15:36:26] INFO  c.i.F.FirstSpringBootApplication - No active profile set, falling back to 1 default profile: "default"
+[2025-05-09 15:36:27] INFO  o.a.catalina.core.StandardService - Starting service [Tomcat]
+[2025-05-09 15:36:27] INFO  o.a.catalina.core.StandardEngine - Starting Servlet engine: [Apache Tomcat/10.1.40]
+[2025-05-09 15:36:27] INFO  o.a.c.c.C.[Tomcat].[localhost].[/] - Initializing Spring embedded WebApplicationContext
+[2025-05-09 15:36:27] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-3 - Starting...
+[2025-05-09 15:36:27] INFO  com.zaxxer.hikari.pool.HikariPool - HikariPool-3 - Added connection com.mysql.cj.jdbc.ConnectionImpl@37c079e
+[2025-05-09 15:36:27] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-3 - Start completed.
+[2025-05-09 15:36:27] WARN  org.hibernate.orm.deprecation - HHH90000025: MySQL8Dialect does not need to be specified explicitly using 'hibernate.dialect' (remove the property setting and it will be selected by default)
+[2025-05-09 15:36:27] WARN  org.hibernate.orm.deprecation - HHH90000026: MySQL8Dialect has been deprecated; use org.hibernate.dialect.MySQLDialect instead
+[2025-05-09 15:36:27] WARN  o.s.b.a.o.j.JpaBaseConfiguration$JpaWebConfiguration - spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+[2025-05-09 15:36:28] INFO  c.i.F.FirstSpringBootApplication - Started FirstSpringBootApplication in 1.258 seconds (process running for 178.483)

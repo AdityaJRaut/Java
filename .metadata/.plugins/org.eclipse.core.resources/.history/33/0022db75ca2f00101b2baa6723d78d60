@@ -1,0 +1,8 @@
+package com.itp.FirstSpringBoot.response;
+
+public class ValidationErrorResponse {
+
+	private String message;
+	private String rejectedField;
+	private String rejectedValue;
+}

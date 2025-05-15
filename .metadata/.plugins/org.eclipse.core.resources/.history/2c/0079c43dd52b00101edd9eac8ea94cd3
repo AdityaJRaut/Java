@@ -1,0 +1,5 @@
+insert into student("name","marks") values ("Aditya",100);
+insert into student("name","marks") values ("Bhushan",99);
+insert into student("name","marks") values ("Bhavesh",98);
+insert into student("name","marks") values ("Dinesh",97);
+insert into student("name","marks") values ("Nilesh",96);

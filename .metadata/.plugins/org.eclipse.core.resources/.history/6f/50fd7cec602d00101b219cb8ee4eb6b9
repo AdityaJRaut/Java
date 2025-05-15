@@ -1,0 +1,30 @@
+package stream;
+
+import java.util.ArrayList;
+import java.util.List;
+import java.util.Map;
+import java.util.stream.Collectors;
+
+public class Collect {
+
+	public static void main(String[] args) {
+		String name="Aditya Janardan Raut";
+		String[] arr=name.split(" ");
+		List<Character> alist=new ArrayList<Character>();
+		for(String word:arr)
+		{
+			char[] ch=word.toUpperCase().toCharArray();
+			for(char c:ch)
+			{
+				alist.add(c);
+			}
+		}
+		
+		Map<Object, Long> wordFreq =alist.stream().collect(Collectors.groupingBy(word->word,Collectors.counting()));
+		System.out.println(wordFreq);
+		
+		List<Character> a=(List<Character>) alist.stream().sorted();
+		System.out.println(a);
+	}
+
+}

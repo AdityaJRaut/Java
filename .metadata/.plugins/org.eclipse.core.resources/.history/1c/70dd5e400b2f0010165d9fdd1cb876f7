@@ -1,0 +1,82 @@
+package com.aditya.controller;
+
+import java.util.List;
+import java.util.Optional;
+
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.data.domain.Page;
+import org.springframework.stereotype.Controller;
+import org.springframework.ui.Model;
+import org.springframework.validation.annotation.Validated;
+import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.ModelAttribute;
+import org.springframework.web.bind.annotation.PathVariable;
+import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestParam;
+import org.springframework.web.servlet.mvc.support.RedirectAttributes;
+
+import com.aditya.model.Person;
+import com.aditya.service.PersonService;
+
+@Controller
+@Validated
+public class PersonController {
+	@Autowired
+	private PersonService personService;
+
+	@GetMapping("/")
+	public String listPerson(Model model) {
+		List<Person> persons = personService.findAll();
+		model.addAttribute("persons", persons);
+		return "index";
+	}
+
+	@RequestMapping("/addperson")
+	public String addPerson() {
+		return "addperson";
+	}
+
+	@PostMapping("/saveperson")
+	public String savePerson(@ModelAttribute Person person, RedirectAttributes redirectAttributes) {
+
+		String message = (person.getId() != null) ? "person updated successfully" : "person added successfully";
+		personService.save(person);
+		redirectAttributes.addFlashAttribute("message", message);
+		return "redirect:/";
+	}
+
+	@GetMapping("/findperson/{id}")
+	public Optional<Person> findById(@PathVariable long id) {
+		return personService.findById(id);
+
+	}
+
+	@GetMapping("/viewperson")
+	public String viewPerson(@RequestParam long id, Model model) {
+		Optional<Person> person = personService.findById(id);
+		model.addAttribute("person", person.get());
+		return "viewperson";
+
+	}
+
+	@GetMapping("/deleteperson")
+	public String deleteperson(@RequestParam long id, RedirectAttributes redirectAttributes) {
+		personService.deletePerson(id);
+		redirectAttributes.addFlashAttribute("message", "Person deleted with id " + id);
+		return "redirect:/";
+	}
+
+	@GetMapping("/editperson")
+	public String editPerson(@RequestParam long id, Model model) {
+		Optional<Person> person = personService.findById(id);
+		model.addAttribute("person", person.get());
+		return "editperson";
+	}
+
+	@GetMapping("/productbypages/{pageNumber}/{pageSize}") // insert post mapping
+	public Page<Person> productbypages(@PathVariable int pageNumber, @PathVariable int pageSize) {
+		Page<Person> products = personService.personByPages(pageNumber, pageSize);
+		return products;
+	}
+}

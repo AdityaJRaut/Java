@@ -1,0 +1,31 @@
+package stream;
+
+import java.util.Arrays;
+import java.util.List;
+import java.util.Map;
+import java.util.stream.Collectors;
+import java.util.stream.Stream;
+
+public class MapGrouping2 {
+	static int i = 0;
+
+	public static void main(String args[]) {
+
+		List<Book> books = Arrays.asList(new Book("The great gatsby", "Aditya", "fiction"),
+				new Book("the dairy of young girl", "Bhushan", "non-fiction"),
+				new Book("harry potter and philosophers stone", "Dinesh", "children"),
+				new Book("the catcher in the eye", "Nilesh", "fiction"));
+
+		String[] newBooks = getBooks(books);
+		for (String book : newBooks) {
+			System.out.println(book);
+		}
+		Stream<Object> newList=books.stream().flatMap(List::stream);
+	}
+
+	private static String[] getBooks(List<Book> books) {
+
+		return books.stream().collect(Collectors.groupingBy(Book::getCategory)).values().stream().flatMap(List::stream)
+				.map(Book::getBookName).toArray(String[]::new);
+	}
+}

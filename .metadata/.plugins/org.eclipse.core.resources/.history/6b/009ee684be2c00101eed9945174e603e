@@ -1,0 +1,11 @@
+package com.spring.crud.response;
+
+import lombok.AllArgsConstructor;
+import lombok.NoArgsConstructor;
+
+@AllArgsConstructor
+@NoArgsConstructor
+@Data
+public class ErrorResponse {
+
+}

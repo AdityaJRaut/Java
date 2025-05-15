@@ -1,0 +1,8 @@
+package stream;
+
+public class Employee {
+
+	private int id;
+	private int name;
+	private int salary;
+}

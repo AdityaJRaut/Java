@@ -1,0 +1,24 @@
+package com.employee.model;
+import java.util.Collection;
+
+import jakarta.persistence.Entity;
+import lombok.AllArgsConstructor;
+import lombok.Builder;
+import lombok.Data;
+import lombok.NoArgsConstructor;
+
+@Entity
+@AllArgsConstructor
+@NoArgsConstructor
+@Data
+@Builder
+public class User {
+
+	private int id;
+	private String firstName;
+	private String lastName;
+	private String email;
+	private String password;
+	private Collection<Role> roles;
+	
+}

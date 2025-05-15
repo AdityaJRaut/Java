@@ -1,0 +1,48 @@
+package com.spring.crud.service;
+
+import java.util.List;
+
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Service;
+
+import com.spring.crud.model.Student;
+import com.spring.crud.repository.StudentRepository;
+
+import jakarta.persistence.EntityNotFoundException;
+
+@Service
+public class StudentService {
+
+	@Autowired
+	StudentRepository studentRepository;
+
+	public Student saveStudent(Student student) {
+		return studentRepository.save(student);
+	}
+
+	public List<Student> getAllStudents() {
+		return studentRepository.findAll().stream().filter(student -> student.getName().equalsIgnoreCase(startsWith("B"))).toList();
+	}
+
+	public Student getStudent(int id) {
+		return studentRepository.findById(id)
+				.orElseThrow(() -> new EntityNotFoundException("Student not found with id : " + id));
+	}
+
+	public Student updateStudent(Student student) {
+		if (studentRepository.existsById(student.getRno())) {
+			return studentRepository.save(student);
+		} else {
+			throw new EntityNotFoundException("Student not found with id : " + student.getRno());
+		}
+	}
+
+	public Student getStudentByName(String name) {
+		return studentRepository.findByNameIgnoreCase(name)
+				.orElseThrow(() -> new EntityNotFoundException("Student not found with name: " + name));
+	}
+
+	public void deleteStudent(int id) {
+		studentRepository.deleteById(id);
+	}
+}

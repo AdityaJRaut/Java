@@ -1,0 +1,13 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+<meta charset="UTF-8">
+<title>View Person</title>
+</head>
+<body>
+	<p>ID:<span th:text="${person.id}"></span></p>
+	<p>Name:<span th:text="${person.name}"></span></p>
+	<p>Age:<span th:text="${person.age}"></span></p>
+	<p>Gender:<span th:text="${person.gender}"></span></p>
+</body>
+</html>

@@ -1,0 +1,16 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org" lang="">
+<head>
+    <title>Test Page</title>
+</head>
+<body>
+<h1>Hello from Thymeleaf!</h1>
+<p>Spring Boot + Thymeleaf is working 🚀</p>
+<p th:text="${message}"></p>
+<h1 th:text="${message}"></h1>
+<input th:value="${message}" /> <input th:value="${username}"  readonly="readonly" />
+<div th:if="${username=='Adit'}">
+<p >ADITYA</p>
+</div>
+</body>
+</html>

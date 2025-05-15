@@ -1,0 +1,5 @@
+package com.aditya.exception;
+
+public class PersonNotFoundException extends Exception {
+
+}

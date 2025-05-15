@@ -1,0 +1,70 @@
+package com.spring.crud.controller;
+
+import java.util.List;
+
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.data.domain.Page;
+import org.springframework.http.HttpStatus;
+import org.springframework.http.ResponseEntity;
+import org.springframework.validation.BindingResult;
+import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PathVariable;
+import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.RequestBody;
+import org.springframework.web.bind.annotation.RestController;
+
+import com.spring.crud.model.Student;
+import com.spring.crud.response.ValidationResponse;
+import com.spring.crud.service.StudentService;
+
+import jakarta.validation.Valid;
+
+@RestController
+public class StudentController {
+
+    @Autowired
+	StudentService studentService;
+
+
+	@PostMapping("/addstudent")
+	public ResponseEntity<?> addStudent(@RequestBody @Valid Student student,BindingResult bindingResult) {
+		
+		if(bindingResult.hasErrors())
+		{
+			return ResponseEntity<ValidationResponse>(new ValidationResponse(),HttpStatus.BAD_REQUEST) 
+		}
+		
+		//return studentService.saveStudent(student);
+	}
+
+	@PostMapping("/liststudents")
+	public List<Student> listStudents() {
+		return studentService.getAllStudents();
+	}
+
+	@GetMapping("/getstudent/{id}")
+	public Student getStudent(@PathVariable Integer id) {
+		return studentService.getStudent(id);
+	}
+
+	@PostMapping("/updatestudent")
+	public void updateStudent(@RequestBody Student student) {
+		studentService.updateStudent(student);
+	}
+
+	@GetMapping("/getstudentbyname/{name}")
+	public Student getStudentByName(@PathVariable String name) {
+		return studentService.getStudentByName(name);
+	}
+
+	@GetMapping("/deletestudent/{id}")
+	public void deleteStudent(@PathVariable Integer id) {
+		studentService.deleteStudent(id);
+	}
+	
+	@GetMapping("/employeebypage/{pageNumber}/{pageSize}")
+	public Page<Student> getStudentByPage(@PathVariable int pageNumber,@PathVariable int pageSize)
+	{
+		return studentService.getStudentByPage(pageNumber, pageSize); 
+	}
+}

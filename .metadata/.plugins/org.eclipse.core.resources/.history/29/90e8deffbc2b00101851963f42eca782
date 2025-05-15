@@ -1,0 +1,10 @@
+package strings;
+
+public class StringJoin {
+
+	public static void main(String[] args)
+	{
+		String myName=String.join(" ", "My","name","is","Aditya","Raut");
+		System.out.print(myName);
+	}
+}

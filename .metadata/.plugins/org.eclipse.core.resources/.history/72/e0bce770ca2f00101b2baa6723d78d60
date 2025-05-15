@@ -1,0 +1,5 @@
+package com.itp.FirstSpringBoot.response;
+
+public class ValidationErrorResponse {
+
+}

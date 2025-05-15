@@ -1,0 +1,5 @@
+package com.itp.FirstSpringBoot;
+
+public class StudentNotFoundException {
+
+}
